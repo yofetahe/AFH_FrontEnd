@@ -1,0 +1,27 @@
+.residentPhoto>img {
+    width: 250px;
+    height: auto;
+    border: solid 1px gray;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.residentPhoto {
+    float: left;
+    margin-right: 40px;
+}
+.residentData {
+    float: left;
+}
+span {
+    font-weight: bold;
+}
+
+.emergencyContact {
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.emergencyContactInfo {
+    margin-left: 20px;
+}
