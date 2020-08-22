@@ -5,7 +5,8 @@ import './App.css';
 import Header from './components/common/header';
 import Footer from './components/common/footer';
 import Menu from './components/common/menu';
-import Resident from './components/resident_profile/index';
+import Residents from './components/residents_profile/index';
+import ResidentInfo from './components/residents_profile/resident_info';
 import Staff from './components/stuff_profile';
 import Medication from './components/medication';
 import Incidence from './components/incidence';
@@ -22,7 +23,9 @@ function App() {
       <Menu />
       <div>
         <Switch>
-          <Route exact path="/residents" component={Resident} />
+          <Route exact path="/" component={Residents} />
+          <Route exact path="/residents" component={Residents} />
+          <Route exact path="/resident/:id" component={ResidentInfo} />
           <Route exact path="/staff" component={Staff} />
           <Route exact path="/medication" component={Medication} />
           <Route exact path="/incidence" component={Incidence} />
