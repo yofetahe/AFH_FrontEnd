@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './resident_info.css';
 import DefaultPhoto from '../../images/defaultPhoto.png';
@@ -29,7 +30,12 @@ const ResidentInfo = (props: any) => {
 
     return (
         <div className='main-content'>
-            <div className='residentPhoto'> <img src={DefaultPhoto} alt='pic'/> </div>
+            <div className='residentPhoto'>
+                <img src={DefaultPhoto} alt='pic' />
+                <div>
+                    <Link to={`/updateResident/${residentInfo.ID}`}> Update </Link>
+                </div>
+            </div>
             <div className='residentData'>
                 <p> <span>Full Name:</span> {residentInfo.FirstName} {residentInfo.MiddleNameInitial} {residentInfo.LastName} </p>
                 <p> <span>Date of Birth:</span> {residentInfo.DateOfBirth} </p>
