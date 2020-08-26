@@ -129,9 +129,9 @@ class ResidentProfile extends Component {
     render() {
         return (
             <div className='main-content'>
-                <div>
-                    <Link to={'/addResident'}>Add Resident</Link>
-                </div>
+                <div className="residentHeader">
+                    <Link to={'/addResident'} className="commonButton">Add Resident</Link>
+                </div>                
                 {this.state.residents.map(resident => {
                     return <Resident key={resident.ID} residentInfo={resident} />
                 })}
