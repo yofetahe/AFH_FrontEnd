@@ -11,15 +11,18 @@
 }
 .residentData {
     float: left;
+    margin-left: 50px;
+    width: 20%;
 }
 span {
     font-weight: bold;
 }
 
-.emergencyContact {
+.catagoryTitle {
     border-bottom: 1px solid #fff;
     font-weight: bold;
     font-style: italic;
+    line-height: 30px;
 }
 
 .emergencyContactInfo {

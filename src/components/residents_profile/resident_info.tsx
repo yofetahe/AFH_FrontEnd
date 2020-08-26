@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './resident_info.css';
 import DefaultPhoto from '../../images/defaultPhoto.png';
@@ -9,8 +10,11 @@ const residentData = {
     FirstName: "James",
     MiddleNameInitial: "M",
     LastName: "Thomas",
+    Geneder: "Male",
     DateOfBirth: "10/04/1945",
     PlaceOfBirth: "Alaska",
+    PrimaryLanguage: "English",
+    DateEntered: "01/10/2018",
     PhotoPath: "",
     EmergencyContacts: [
         {
@@ -20,7 +24,29 @@ const residentData = {
             PhoneNumber: "206-887-6266",
             Email: "email@gmail.com"
         }
-    ]
+    ],
+    MedicalHistory: {
+        SpecialNeeds: "Yes",
+        Dementia: "No",
+        MentalHealth: "NO",
+        DevelopmentalDisability: "No",
+        Independency: "Yes",
+        AssistnaceRequired: "Yes"
+    },
+    PrimaryPhysician: {
+        FullName: "Barbara John",
+        Phone: "206-000-0000"
+    },
+    MedicalGroup: [
+        {
+            Name: "",
+            Phone: ""
+        }
+    ],
+    Pharmacy: {
+        Name: "Axios",
+        Phone: "425-000-0000"
+    }
 }
 
 const ResidentInfo = (props: any) => {
@@ -29,15 +55,27 @@ const ResidentInfo = (props: any) => {
 
     return (
         <div className='main-content'>
-            <div className='residentPhoto'> <img src={DefaultPhoto} alt='pic'/> </div>
+            <div className='residentPhoto'>
+                <img src={DefaultPhoto} alt='pic' />
+                <div className="commonButtonDiv">
+                    <Link to={`/updateResident/${residentInfo.ID}`} className="commonButton"> Update </Link>
+                </div>
+            </div>
             <div className='residentData'>
-                <p> <span>Full Name:</span> {residentInfo.FirstName} {residentInfo.MiddleNameInitial} {residentInfo.LastName} </p>
-                <p> <span>Date of Birth:</span> {residentInfo.DateOfBirth} </p>
-                <p> <span>Place of Birth:</span> {residentInfo.PlaceOfBirth} </p>
-                <div className='emergencyContact'>Emergency Contacts</div>
+                <div className="catagoryTitle"> Personal Info </div>
+                <div>
+                    <p> <span>Full Name:</span> {residentInfo.FirstName} {residentInfo.MiddleNameInitial} {residentInfo.LastName} </p>
+                    <p> <span>Date of Birth:</span> {residentInfo.DateOfBirth} </p>
+                    <p> <span>Place of Birth:</span> {residentInfo.PlaceOfBirth} </p>
+                    <p> <span>Gender:</span> {residentInfo.Geneder} </p>
+                    <p> <span>Primary Language:</span> {residentInfo.PrimaryLanguage} </p>
+                    <p> <span>Date Entered:</span> {residentInfo.DateEntered} </p>
+                </div>
+
+                <div className='catagoryTitle'>Emergency Contacts</div>
                 {residentInfo.EmergencyContacts.map(ec => {
                     return (
-                        <div className='emergencyContactInfo'>
+                        <div>
                             <p> <span>Name:</span> {ec.FirstName} {ec.LastName} </p>
                             <p> <span>Relationship:</span> {ec.Relationship} </p>
                             <p> <span>Phone Number:</span> {ec.PhoneNumber} </p>
@@ -46,6 +84,42 @@ const ResidentInfo = (props: any) => {
                     );
                 })}
             </div>
+            <div className='residentData'>
+
+                <div className="catagoryTitle"> Primary Physician </div>
+                <div>
+                    <p>Name: {residentData.PrimaryPhysician.FullName}</p>
+                    <p>Phone: {residentData.PrimaryPhysician.Phone}</p>
+                </div>
+
+                <div className="catagoryTitle"> Medical Group </div>
+                {residentData.MedicalGroup.map(group => {
+                    return (
+                        <div>
+                            <p>Name: {group.Name}</p>
+                            <p>Phone: {group.Phone}</p>
+                        </div>
+                    );
+                })}
+
+                <div className="catagoryTitle"> Pharmacy </div>
+                <div>
+                    <p>Name: {residentData.Pharmacy.Name}</p>
+                    <p>Phone: {residentData.Pharmacy.Phone}</p>
+                </div>
+            </div>
+            <div className='residentData'>
+                <div className="catagoryTitle"> Medical History </div>
+                <div>
+                    <p> SpecialNeeds: {residentData.MedicalHistory.SpecialNeeds}</p>
+                    <p> Dementia: {residentData.MedicalHistory.Dementia}</p>
+                    <p> MentalHealth: {residentData.MedicalHistory.MentalHealth}</p>
+                    <p> DevelopmentalDisability: {residentData.MedicalHistory.DevelopmentalDisability}</p>
+                    <p> Independency: {residentData.MedicalHistory.Independency}</p>
+                    <p> AssistnaceRequired: {residentData.MedicalHistory.AssistnaceRequired}</p>
+                </div>
+            </div>
+            
         </div>
     );
 }

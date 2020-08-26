@@ -7,6 +7,7 @@ import Footer from './components/common/footer';
 import Menu from './components/common/menu';
 import Residents from './components/residents_profile/index';
 import ResidentInfo from './components/residents_profile/resident_info';
+import ResidentInfoForm from './components/residents_profile/resident_info_form';
 import Staff from './components/stuff_profile';
 import Medication from './components/medication';
 import Incidence from './components/incidence';
@@ -26,6 +27,8 @@ function App() {
           <Route exact path="/" component={Residents} />
           <Route exact path="/residents" component={Residents} />
           <Route exact path="/resident/:id" component={ResidentInfo} />
+          <Route exact path="/addResident" component={ResidentInfoForm} />
+          <Route exact path="/updateResident/:id" component={ResidentInfoForm} />
           <Route exact path="/staff" component={Staff} />
           <Route exact path="/medication" component={Medication} />
           <Route exact path="/incidence" component={Incidence} />

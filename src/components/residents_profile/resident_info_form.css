@@ -1,0 +1,37 @@
+.formTitle{
+    font-style: italic;
+    line-height: 40px;
+    text-decoration-line: underline;
+}
+.formLeftSide {
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+.formRightSide {
+    display: inline-block;
+    vertical-align: top;
+}
+.formBottom {
+    display: block;
+    border-top: 1px solid #fff;
+}
+.formCatagory{
+    font-weight: bold;
+    line-height: 50px;
+    border-bottom: #fff 1px dotted;
+}
+label {
+    font-style: italic;
+    margin-right: 10px;
+    line-height: 30px;
+}
+input[type=text] {
+    border: 1px solid rgba(71, 71, 71, 0.5);
+    border-radius: 5px;
+    height: 20px;
+}
+input[type=radio] {
+    height: 30px;
+    vertical-align: middle;
+}
