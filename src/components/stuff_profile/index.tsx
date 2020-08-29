@@ -59,7 +59,7 @@ const Staff = () => {
     return (
         <div className='main-content'>
             <div className="residentHeader">
-                <Link to={'/addStaff'} className="commonButton">Add Staff</Link>
+                <Link to={'/staffForm'} className="commonButton">Add Staff</Link>
             </div>
             <div className="table">
                 <head className="tableRow">
@@ -68,6 +68,7 @@ const Staff = () => {
                     <div className="tableCell">Address</div>
                     <div className="tableCell">Phone</div>
                     <div className="tableCell">Date Started</div>
+                    <div className="tableCell">&nbsp;</div>
                     <div className="tableCell">&nbsp;</div>
                     <div className="tableCell">&nbsp;</div>
                 </head>
@@ -80,7 +81,10 @@ const Staff = () => {
                             <div className="tableCell">{staff.Phone}</div>
                             <div className="tableCell">{staff.DateStarted}</div>
                             <div className="tableCell">
-                                <Link to={`/staff/${staff.Id}`} className="sideButton">View</Link>
+                                <Link to={`/staff/document/${staff.PublicId}`} className="sideButton">Documents</Link>
+                            </div>
+                            <div className="tableCell">
+                                <Link to={`/staff/${staff.PublicId}`} className="sideButton">View</Link>
                             </div>
                             <div className="tableCell">
                                 <div className="sideButton">Leave</div>

@@ -53,7 +53,7 @@
   text-decoration: none;
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 10px 30px;
+  padding: 5px 30px;
   margin: 10px 0px;
   color: #000;
   background-color: rgb(228, 228, 228);
@@ -79,4 +79,9 @@
 }
 .textLink {
   cursor: pointer;
+}
+select {
+  border-radius: 5px;
+  border: solid 1px gray;
+  margin: 5px;
 }

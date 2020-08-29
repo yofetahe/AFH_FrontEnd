@@ -1,0 +1,41 @@
+.pageTitle {
+    margin-top: 20px;
+    font-style: italic;
+    background-color: rgba(192, 192, 192, 0.5);
+    padding: 15px 5px;
+}
+.formContent {
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.contentList {
+    padding: 10px 0px;
+    border-top: dotted #fff 1px;
+    margin-top: 10px;
+}
+
+.table {
+    display: table;
+    min-width: 40%;
+}
+.tableRaw {
+    display: table-row;
+}
+.tableHeaderCell {
+    text-align: center;
+    display: table-cell;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border: 1px 0px 0px 0px dotted #fff;
+    padding: 5px 20px 5px 5px;
+}
+.tableCell {
+    display: table-cell;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-bottom: 1px solid #fff;
+    padding: 5px 20px 5px 5px;
+}
+.btn {
+    width: 50%;
+}
