@@ -84,16 +84,18 @@ const Incidence = () => {
                     <div>
                         <label>Incident Level</label>
                         <select id="incidentLevel">
+                            <option value='-'></option>
                             {incident_level && incident_level.map(incident => {
-                                return <option id={incident} value={incident} />
+                                return <option id={incident} value={incident}>{incident}</option>
                             })}
                         </select>
                     </div>
                     <div>
                         <label>Reported To</label>
                         <select id="reportedTo">
+                            <option value='-'></option>
                             {report_to && report_to.map(report => {
-                                return <option id={report.trim()} value={report} />
+                                return <option id={report.trim()} value={report}>{report}</option>
                             })}
                         </select>
                     </div>
@@ -119,14 +121,15 @@ const Incidence = () => {
                     .map(incident => {
                         return (
                             <div key={incident.id} className='incidentContent'>
-                                <u>Resident: {incident.resident_name} &nbsp; Date: {incident.incident_date} &nbsp; Level: {incident.incident_level}</u> <br/>
-                                What heppen? -<i>{incident.incident_title}</i> <br/>
-                                Description: <i>{incident.description}</i> <br/> Actions: <i>{incident.careGiver_action} </i> <br/>                                
-                                Reported To: <i>{incident.reportedTo}</i> &nbsp; Reported By: <i>{incident.reportedBy}</i> <br/>
-                                <span>UPDATE</span>
+                                <u>Resident: {incident.resident_name} &nbsp; Date: {incident.incident_date} &nbsp; Level: {incident.incident_level}</u> <br />
+                                What heppen? -<i>{incident.incident_title}</i> <br />
+                                Description: <i>{incident.description}</i> <br /> Actions: <i>{incident.careGiver_action} </i> <br />
+                                Reported To: <i>{incident.reportedTo}</i> &nbsp; Reported By: <i>{incident.reportedBy}</i> <br />
+                                <div className='updateLink'>Update</div>
                             </div>
                         );
                     })}
+                <div>Pagination Place holder - 1 2</div>
             </div>
         </div>
     );

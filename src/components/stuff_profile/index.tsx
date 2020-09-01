@@ -72,10 +72,10 @@ const Staff = () => {
                     <div className="tableCell">&nbsp;</div>
                     <div className="tableCell">&nbsp;</div>
                 </head>
-                {staffs.map(staff => {
+                {staffs.map((staff, index) => {
                     return (
                         <div className="tableRow">
-                            <div className="tableCell">#</div>
+                            <div className="tableCell">{index + 1}</div>
                             <div className="tableCell">{staff.FirstName} {staff.LastName}</div>
                             <div className="tableCell">{staff.Address}</div>
                             <div className="tableCell">{staff.Phone}</div>

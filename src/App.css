@@ -84,4 +84,6 @@ select {
   border-radius: 5px;
   border: solid 1px gray;
   margin: 5px;
+  width: 158px;
+  height: 27px;
 }
