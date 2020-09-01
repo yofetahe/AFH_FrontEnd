@@ -1,0 +1,26 @@
+.incidentForm {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 50px;
+    text-align: right;
+}
+.incidentList {
+    display: inline-block;
+    vertical-align: top;
+}
+.incidentContent {
+    background-color: rgb(219, 219, 219);
+    margin-bottom: 5px;
+    padding: 10px 5px;
+    border-top: dotted #fff 1px;
+    border-bottom: dotted #fff 1px;
+    min-width: 800px;
+}
+.updateLink {
+    cursor: pointer;
+    color: steelblue;
+    margin: 10px 0px;
+}
+.updateLink:hover {    
+    color: #fff;
+}
