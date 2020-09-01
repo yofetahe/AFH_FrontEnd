@@ -1,0 +1,15 @@
+
+.incidentForm {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 50px;
+}
+.incidentList {
+    display: inline-block;
+    vertical-align: top;
+}
+.incidentContent {
+    background-color: rgb(219, 219, 219);
+    margin-bottom: 5px;
+    padding: 10px 5px;
+}
