@@ -1,0 +1,16 @@
+.medicationContent {
+    background-color: rgb(219, 219, 219);
+    margin-bottom: 5px;
+    border-top: dotted #fff 1px;
+    border-bottom: dotted #fff 1px;
+    min-width: 800px;
+}
+.residentPicture {
+    display: inline-block;
+    vertical-align: top;
+}
+.residentMedInfo {
+    display: inline-block;
+    padding: 10px 5px;
+    vertical-align: top;
+}

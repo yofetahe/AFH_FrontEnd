@@ -3,27 +3,9 @@ import { Link } from 'react-router-dom';
 
 import './index.css';
 import Resident from './resident';
+import * as typeSrc from '../source/typeSource';
 
-interface EmergencyContact {
-    FirstName: string;
-    LastName: string;
-    Relationship: string;
-    PhoneNumber: string;
-    Email: string;
-}
-interface Resident {
-    ID: string;
-    PublicId: string;
-    FirstName: string;
-    MiddleNameInitial: string;
-    LastName: string;
-    DateOfBirth: string;
-    PlaceOfBirth: string;
-    PhotoPath: string;
-    EmergencyContacts: EmergencyContact[];
-}
-
-const residents: Resident[] = [
+const residents: typeSrc.Resident[] = [
     {
         ID: "1",
         PublicId: "0205284052462",

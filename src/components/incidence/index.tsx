@@ -112,7 +112,7 @@ const Incidence = () => {
                 </form>
             </div>
             <div className='incidentList'>
-                {incidentList && incidentList
+                {incidents && incidents
                     .sort(function (a, b) {
                         if (new Date(a.incident_date) < new Date(b.incident_date)) { return 1; }
                         if (new Date(a.incident_date) > new Date(b.incident_date)) { return -1; }
