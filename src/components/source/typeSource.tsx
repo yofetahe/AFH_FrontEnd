@@ -14,6 +14,26 @@ export interface Resident {
     LastName: string;
     DateOfBirth: string;
     PlaceOfBirth: string;
+    Gender: string;
     PhotoPath: string;
     EmergencyContacts: EmergencyContact[];
+    Medication?: Medication[];
+}
+
+export interface Medication {
+    Id: string;
+    Name: string;
+    Dose: string;
+    Type: string; //timely or needed
+    Time?: string[];
+    StartDate?: string;
+    NoOfDays?: string;
+    EndDate?: string;
+    Status: string;
+}
+
+export interface residentsMedications {
+    ID: string;
+    ResidentId: string;
+    Medications: Array<Medication>;
 }

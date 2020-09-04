@@ -13,6 +13,8 @@ import StaffForm from './components/stuff_profile/staff_info_form';
 import StaffInfo from './components/stuff_profile/staff_info';
 import StaffDocument from './components/stuff_profile/staff_documents';
 import Medication from './components/medication';
+import MedicationAddForm from './components/medication/medicationAddForm';
+import MedicationDistribution from './components/medication/medicineDistribution';
 import Incidence from './components/incidence';
 import Purchase from './components/purchase';
 import Schedule from './components/schedule';
@@ -40,6 +42,8 @@ function App() {
           <Route exact path="/staffForm/:id" component={StaffForm} />
           <Route exact path="/staff/document/:id" component={StaffDocument} />
           <Route exact path="/medication" component={Medication} />
+          <Route strict exact path="/medication/add/:id" component={MedicationAddForm} />
+          <Route strict exact path="/medication/distribution/:id" component={MedicationDistribution} />
           <Route exact path="/incidence" component={Incidence} />
           <Route exact path="/purchase" component={Purchase} />
           <Route exact path="/schedule" component={Schedule} />

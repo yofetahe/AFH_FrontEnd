@@ -2,41 +2,9 @@ import React, { useState } from 'react';
 
 import Menu from './admin_menu';
 import './admin.css';
+import * as data from '../source/mockData';
 
-const DocumentsList = [
-    {
-        Id: 1,
-        PublicId: '98067245026241',
-        DocumentName: 'Document One',
-        Description: 'Description',
-        Required: 'true',
-        Status: 'Active'
-    },
-    {
-        Id: 2,
-        PublicId: '98067245026242',
-        DocumentName: 'Document Two',
-        Description: 'Description',
-        Required: 'true',
-        Status: 'Active'
-    },
-    {
-        Id: 3,
-        PublicId: '98067245026243',
-        DocumentName: 'Document Three',
-        Description: 'Description',
-        Required: 'true',
-        Status: 'Active'
-    },
-    {
-        Id: 4,
-        PublicId: '98067245026244',
-        DocumentName: 'Document Four',
-        Description: 'Description',
-        Required: 'true',
-        Status: 'Active'
-    }
-]
+const DocumentsList = data.DocumentsList;
 
 const Documents = () => {
     const [documents] = useState(DocumentsList);

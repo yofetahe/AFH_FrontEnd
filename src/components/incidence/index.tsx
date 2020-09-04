@@ -1,59 +1,12 @@
 import React, { useState } from 'react';
 
 import './index.css';
+import * as data from '../source/mockData';
 
-const incidentList = [
-    {
-        id: 1,
-        public_id: "945624576241",
-        incident_title: "Fall down",
-        description: "fall from chair",
-        careGiver_action: "hold ice on the area",
-        resident_id: "987959567364",
-        resident_name: "John Kris",
-        incident_date: "8/29/2020",
-        incident_level: "Minor",
-        incident_pictures_path: [
-            "path1",
-            "path2"
-        ],
-        createBy: "2",
-        createDate: "8/29/2020",
-        reportedTo: "Tenagne Ashenafi",
-        reportedBy: "Phone"
-    },
-    {
-        id: 2,
-        public_id: "945624576242",
-        incident_title: "Fall down",
-        description: "fall from chair",
-        careGiver_action: "hold ice on the area",
-        resident_id: "987959567364",
-        resident_name: "John Kris",
-        incident_date: "8/3/2020",
-        incident_level: "Moderate",
-        incident_pictures_path: [
-            "path1",
-            "path2"
-        ],
-        createBy: "1",
-        createDate: "8/3/2020",
-        reportedTo: "Sirgut Ashenafi",
-        reportedBy: "paper"
-    }
-]
-
-const incident_level = [
-    "Minor", "Moderate", "Serious", "Severe", "Critical", "Maximal"
-]
-
-const report_to = [
-    "Sirgut Ashenafi", "Tenagne Ashenafi"
-]
-
-const reported_by = [
-    "Phone", "Written"
-]
+const incidentList = data.incidentList;
+const incident_level = data.incident_level;
+const report_to = data.report_to;
+const reported_by = data.reported_by;
 
 const Incidence = () => {
     const [incidents] = useState(incidentList);

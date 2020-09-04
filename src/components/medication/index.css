@@ -14,3 +14,33 @@
     padding: 10px 5px;
     vertical-align: top;
 }
+.personalInfoBlock {
+    border-bottom: dotted 1px #fff;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+}
+#name, #dob, #gender {
+    margin-right: 20px;
+    font-weight: normal;
+}
+#viewLink {
+    font-weight: normal;
+    cursor: pointer;
+    float: right;
+}
+.dateTimeBar {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.dataSlot {
+    float: left;
+}
+.timeSlot {
+    float: right;
+}
+.medicationList {
+    padding: 5px;
+}
+.terminateMedication {
+    cursor: pointer;
+}
