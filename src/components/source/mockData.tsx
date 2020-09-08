@@ -1,50 +1,5 @@
 import * as type from './typeSource';
 
-export const resident = {
-    ID: "1",
-    PublicId: "0205284052462",
-    FirstName: "James",
-    MiddleNameInitial: "M",
-    LastName: "Thomas",
-    Geneder: "Male",
-    DateOfBirth: "10/04/1945",
-    PlaceOfBirth: "Alaska",
-    PrimaryLanguage: "English",
-    DateEntered: "01/10/2018",
-    PhotoPath: "",
-    EmergencyContacts: [
-        {
-            FirstName: "EC First Name",
-            LastName: "EC Last Name",
-            Relationship: "Brother",
-            PhoneNumber: "206-887-6266",
-            Email: "email@gmail.com"
-        }
-    ],
-    MedicalHistory: {
-        SpecialNeeds: "Yes",
-        Dementia: "No",
-        MentalHealth: "NO",
-        DevelopmentalDisability: "No",
-        Independency: "Yes",
-        AssistnaceRequired: "Yes"
-    },
-    PrimaryPhysician: {
-        FullName: "Barbara John",
-        Phone: "206-000-0000"
-    },
-    MedicalGroup: [
-        {
-            Name: "",
-            Phone: ""
-        }
-    ],
-    Pharmacy: {
-        Name: "Axios",
-        Phone: "425-000-0000"
-    }
-}
-
 export const residents = [
     {
         ID: "1",
@@ -145,6 +100,106 @@ export const residents = [
                 Email: "email@gmail.com"
             }
         ]
+    }
+]
+export const resident = {
+    ID: "1",
+    PublicId: "0205284052462",
+    FirstName: "James",
+    MiddleNameInitial: "M",
+    LastName: "Thomas",
+    Geneder: "Male",
+    DateOfBirth: "10/04/1945",
+    PlaceOfBirth: "Alaska",
+    PrimaryLanguage: "English",
+    DateEntered: "01/10/2018",
+    PhotoPath: "",
+    EmergencyContacts: [
+        {
+            FirstName: "EC First Name",
+            LastName: "EC Last Name",
+            Relationship: "Brother",
+            PhoneNumber: "206-887-6266",
+            Email: "email@gmail.com"
+        }
+    ],
+    MedicalHistory: {
+        SpecialNeeds: "Yes",
+        Dementia: "No",
+        MentalHealth: "NO",
+        DevelopmentalDisability: "No",
+        Independency: "Yes",
+        AssistnaceRequired: "Yes"
+    },
+    PrimaryPhysician: {
+        FullName: "Barbara John",
+        Phone: "206-000-0000"
+    },
+    MedicalGroup: [
+        {
+            Name: "",
+            Phone: ""
+        }
+    ],
+    Pharmacy: {
+        Name: "Axios",
+        Phone: "425-000-0000"
+    }
+}
+
+export const medications = [
+    {
+        Id: 1,
+        PublicId: '9797136141',
+        ItemName: 'Oxycodon',
+        Catagory: 'Tablet',
+        Status: 'Active'
+    },
+    {
+        Id: 2,
+        PublicId: '9797136142',
+        ItemName: 'Asprean',
+        Catagory: 'Antibiotics',
+        Status: 'Active'
+    },
+    {
+        Id: 3,
+        PublicId: '9797136143',
+        ItemName: 'Ativan',
+        Catagory: 'Prescribed',
+        Status: 'Active'
+    },
+    {
+        Id: 4,
+        PublicId: '9797136144',
+        ItemName: 'Apap',
+        Catagory: 'Syrup',
+        Status: 'Active'
+    },
+    {
+        Id: 5,
+        PublicId: '9797136145',
+        ItemName: 'Insulin',
+        Catagory: 'Other',
+        Status: 'Active'
+    }
+]
+export const medicationCategories = [
+    {
+        Id: '1',
+        CategoryName: 'Cleaning'
+    },
+    {
+        Id: '2',
+        CategoryName: 'Sanitaizer'
+    },
+    {
+        Id: '3',
+        CategoryName: 'Food'
+    },
+    {
+        Id: '4',
+        CategoryName: 'Drinking'
     }
 ]
 export const residentsMedications: type.residentsMedications[] = [
@@ -324,67 +379,35 @@ export const residentsMedications: type.residentsMedications[] = [
         ]
     }
 ]
-
-export const medications = [
-    {
-        Id: 1,
-        PublicId: '9797136141',
-        ItemName: 'Medication Name',
-        Catagory: 'Tablet',
-        Status: 'Active'
-    },
-    {
-        Id: 2,
-        PublicId: '9797136142',
-        ItemName: 'Medication Name',
-        Catagory: 'Antibiotics',
-        Status: 'Active'
-    },
-    {
-        Id: 3,
-        PublicId: '9797136143',
-        ItemName: 'Medication Name',
-        Catagory: 'Prescribed',
-        Status: 'Active'
-    },
-    {
-        Id: 4,
-        PublicId: '9797136144',
-        ItemName: 'Medication Name',
-        Catagory: 'Syrup',
-        Status: 'Active'
-    },
-    {
-        Id: 5,
-        PublicId: '9797136145',
-        ItemName: 'Medication Name',
-        Catagory: 'Other',
-        Status: 'Active'
-    }
-]
-export const medicationCategories = [
+export const residentMedications = [
     {
         Id: '1',
-        CategoryName: 'Cleaning'
+        Name: 'Medication Name',
+        Dose: '100ml',
+        Type: '3X/day',
+        Time: ['8:00AM', '2:00PM', '10:00PM'],
+        StartDate: '9/1/2020',
+        NoOfDays: '30',
+        EndDate: '9/30/2020',
+        Status: 'Active'
     },
     {
         Id: '2',
-        CategoryName: 'Sanitaizer'
+        Name: 'Medication Name',
+        Dose: '250ml',
+        Type: 'Needed',
+        Status: 'Active'
     },
     {
-        Id: '3',
-        CategoryName: 'Food'
-    },
-    {
-        Id: '4',
-        CategoryName: 'Drinking'
-    }
-]
-export const residentMedications = [
-    {
-        id: '1',
-        public_id: '8684743432',
-        medication_name: ''
+        Id: '1',
+        Name: 'Medication Name',
+        Dose: '150ml',
+        Type: '3X/day',
+        Time: ['8:00AM', '2:00PM', '8:00PM'],
+        StartDate: '9/1/2020',
+        NoOfDays: '30',
+        EndDate: '9/30/2020',
+        Status: 'Active'
     }
 ]
 
@@ -446,7 +469,7 @@ export const itemCategories = [
 
 export const DocumentsList = [
     {
-        Id: 1,
+        Id: '1',
         PublicId: '98067245026241',
         DocumentName: 'Document One',
         Description: 'Description',
@@ -454,7 +477,7 @@ export const DocumentsList = [
         Status: 'Active'
     },
     {
-        Id: 2,
+        Id: '2',
         PublicId: '98067245026242',
         DocumentName: 'Document Two',
         Description: 'Description',
@@ -462,7 +485,7 @@ export const DocumentsList = [
         Status: 'Active'
     },
     {
-        Id: 3,
+        Id: '3',
         PublicId: '98067245026243',
         DocumentName: 'Document Three',
         Description: 'Description',
@@ -470,7 +493,7 @@ export const DocumentsList = [
         Status: 'Active'
     },
     {
-        Id: 4,
+        Id: '4',
         PublicId: '98067245026244',
         DocumentName: 'Document Four',
         Description: 'Description',
@@ -519,15 +542,55 @@ export const incidentList = [
         reportedBy: "paper"
     }
 ]
-
 export const incident_level = [
-    "Minor", "Moderate", "Serious", "Severe", "Critical", "Maximal"
+    { key: 'minor', value: 'minor', text: 'Minor' },
+    { key: 'moderate', value: 'moderate', text: 'Moderate' },
+    { key: 'Serious', value: 'Serious', text: 'Serious' },
+    { key: 'Severe', value: 'Severe', text: 'Severe' },
+    { key: 'Critical', value: 'Critical', text: 'Critical' },
+    { key: 'Maximal', value: 'Maximal', text: 'Maximal' }
 ]
-
 export const report_to = [
-    "Sirgut Ashenafi", "Tenagne Ashenafi"
+    { key: 'sirgut_ashenafi', value: 'sirgut_ashenafi', text: 'Sirgut Ashenafi' },
+    { key: 'tenagne_ashenafi', value: 'tenagne_ashenafi', text: 'Tenagne Ashenafi' }
+]
+export const reported_by = [
+    { key: 'phone', value: 'phone', text: 'Phone' },
+    { key: 'written', value: 'written', text: 'Written' }
 ]
 
-export const reported_by = [
-    "Phone", "Written"
-]
+export const staffInfo = {
+    Id: "1",
+    PublicId: "87959863425",
+    FirstName: "First",
+    MiddleNameInitial: "I",
+    LastName: "Last",
+    DateOfBirth: "10/16/1998",
+    Gender: "Male",
+    Address: "14522 52nd PL W",
+    DriverLicenseNumber: "ERH7654",
+    SSN: "Yes",
+    Phone: "425-000-0000",
+    DateStarted: "01/02/2019",
+    EmergencyContacts: [
+        {
+            FirstName: "EC First Name",
+            LastName: "EC Last Name",
+            Relationship: "Brother",
+            PhoneNumber: "206-887-6266",
+            Email: "email@gmail.com"
+        }
+    ],
+    RequiredDocuments: [
+        {
+            DocumentId: '1',
+            DocumentName: 'Document 1',
+            AddedDate: '8/26/2010'
+        },
+        {
+            DocumentId: '3',
+            DocumentName: 'Document 3',
+            AddedDate: '8/26/2010'
+        }
+    ]
+}

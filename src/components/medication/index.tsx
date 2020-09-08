@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as typeSrc from '../source/typeSource';
-import { Icon } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react';
 
-import './index.css';
+import './medication.css';
 import DefaultPhoto from '../../images/defaultPhoto.png';
 import * as data from '../source/mockData';
 
@@ -22,8 +22,7 @@ const Medication = () => {
     return (
         <div className='main-content'>
             <div className='dateTimeBar'>
-                <span className='dateSlot'>Date: {todayDate} </span>
-                <span className='timeSlot'>Time: {currentHour}</span>
+                <span>Date: {todayDate} (Time: {currentHour})</span>
             </div>
             {residents.map(resident => {
                 return (
@@ -37,10 +36,16 @@ const Medication = () => {
                                 <span id='dob'> DOB: {resident.DateOfBirth} </span>
                                 <span id='gender'> Gender: {resident.Gender} </span>
                                 <span id='viewLink'>
-                                    <Link to={`/medication/distribution/${resident.PublicId}`}>
+                                    <Link to={{
+                                        pathname: `/medication/distribution/${resident.PublicId}`,
+                                        state: { resData: resident }
+                                    }}>
                                         <Icon circular color='teal' name='triangle right' />
                                     </Link>
-                                    <Link to={`/medication/add/${resident.PublicId}`}>
+                                    <Link to={{
+                                        pathname: `/medication/add/${resident.PublicId}`,
+                                        state: { resData: resident }
+                                    }}>
                                         <Icon circular color='teal' name='add' />
                                     </Link>
                                 </span>
@@ -50,16 +55,17 @@ const Medication = () => {
                                     .filter(x => x.ResidentId === resident.PublicId)
                                     .map(y => y.Medications)
                                     .map(z => {
-                                        return z.map(med => {
-                                            return (
-                                                <div className='medicationList'>
-                                                    <Icon color='teal' name='pills' />
-                                                    {med.Name} ({med.Dose}) - {med.Type} {med.Time && ('(' + med.Time.map(t => (t)) + ')')}
-                                                    {med.StartDate && med.EndDate && (' - from ' + med.StartDate + ' to ' + med.EndDate)} &nbsp;
-                                                    <span className='terminateMedication'><Icon color='red' name='times rectangle' /></span>
-                                                </div>
-                                            );
-                                        })
+                                        return z.filter(m => m.Status === 'Active')
+                                            .map(med => {
+                                                return (
+                                                    <div key={med.Id} className='medicationList'>
+                                                        <Icon color='teal' name='pills' />
+                                                        {med.Name} ({med.Dose}) - {med.Type} {med.Time && ('(' + med.Time.map(t => (t)) + ')')}
+                                                        {med.StartDate && med.EndDate && (' - from ' + med.StartDate + ' to ' + med.EndDate)} &nbsp;
+                                                        <span className='terminateMedication'><Icon color='red' name='times rectangle' /></span>
+                                                    </div>
+                                                );
+                                            })
                                     })}
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 .medicationContent {
-    background-color: rgb(219, 219, 219);
+    background-color: rgba(219, 219, 219, 0.3);
     margin-bottom: 5px;
     border-top: dotted #fff 1px;
     border-bottom: dotted #fff 1px;
@@ -33,10 +33,14 @@
     margin-bottom: 10px;
 }
 .dataSlot {
-    float: left;
+    width: 48%;
+    display: inline-block;
 }
 .timeSlot {
-    float: right;
+    width: 48%;
+    display: inline-block;
+    background-color: black;
+    /* float: right; */
 }
 .medicationList {
     padding: 5px;

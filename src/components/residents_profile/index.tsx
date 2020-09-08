@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Icon, Button } from 'semantic-ui-react';
 
 import './index.css';
 import Resident from './resident';
@@ -17,8 +18,13 @@ class ResidentProfile extends Component {
         return (
             <div className='main-content'>
                 <div className="residentHeader">
-                    <Link to={'/addResident'} className="commonButton">Add Resident</Link>
-                </div>                
+                    <Link to={'/addResident'}>
+                        <Button icon labelPosition='left'>
+                            <Icon name='add' />
+                            Resident
+                        </Button>
+                    </Link>
+                </div>
                 {this.state.residents.map(resident => {
                     return <Resident key={resident.ID} residentInfo={resident} />
                 })}

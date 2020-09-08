@@ -1,0 +1,12 @@
+.residentInfo {
+    margin: 10px 0px;
+    border-bottom: dotted 1px #000;
+    display: inline-block;
+    margin-right: 40px;
+    vertical-align: top;
+    line-height: 30px;
+}
+.medicineDetail {
+    display: inline-block;
+    vertical-align: top;
+}

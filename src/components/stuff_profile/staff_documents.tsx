@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Icon } from 'semantic-ui-react';
 
 const requiredDocuments = [
     {
@@ -77,7 +78,7 @@ const Documents = () => {
                 return (
                     <div className='documentList'>
                         {doc.DocumentName}: &nbsp;
-                        {staffProfile && staffProfile.RequiredDocuments.some(reqDoc => reqDoc.DocumentId === doc.ID) ? 'Added' : <span className='sideButton'>Add</span>}
+                        {staffProfile && staffProfile.RequiredDocuments.some(reqDoc => reqDoc.DocumentId === doc.ID) ? <Icon color='blue' name='check' /> : <Icon color='red' name='plus' />}
                     </div>
                 );
             })}

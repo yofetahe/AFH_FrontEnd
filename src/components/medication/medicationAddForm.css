@@ -1,0 +1,23 @@
+.residentInfoBlock {
+    margin: 10px 0px;
+    border-bottom: dotted 1px #000;
+    display: inline-block;
+    margin-right: 40px;
+    vertical-align: top;
+    line-height: 30px;
+}
+.medicineAddForm {
+    display: inline-block;
+    vertical-align: top;
+}
+.timeSlot {
+    background-color: rgb(221, 221, 221);
+    width: 100%;
+    padding: 10px 20px;
+}
+/* form {
+    text-align: right;
+} */
+.formBottom {
+    margin-top: 20px;
+}

@@ -1,46 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Button, Form, Input } from 'semantic-ui-react'
 
 import './staff_info_form.css';
+// import * as data from '../source/mockData';
 
-const staffInfo = {
-    Id: "1",
-    PublicId: "87959863425",
-    FirstName: "First",
-    MiddleNameInitial: "I",
-    LastName: "Last",
-    DateOfBirth: "10/16/1998",
-    Gender: "Male",
-    Address: "14522 52nd PL W",
-    DriverLicenseNumber: "ERH7654",
-    SSN: "Yes",
-    Phone: "425-000-0000",
-    DateStarted: "01/02/2019",
-    EmergencyContacts: [
-        {
-            FirstName: "EC First Name",
-            LastName: "EC Last Name",
-            Relationship: "Brother",
-            PhoneNumber: "206-887-6266",
-            Email: "email@gmail.com"
-        }
-    ],
-    RequiredDocuments: [
-        {
-            DocumentId: '1',
-            DocumentName: 'Document 1',
-            AddedDate: '8/26/2010'
-        },
-        {
-            DocumentId: '3',
-            DocumentName: 'Document 3',
-            AddedDate: '8/26/2010'
-        }
-    ]
-}
+// const staffInfo = data.staffInfo;
+
+const options = [
+    { key: 'm', text: 'Male', value: 'male' },
+    { key: 'f', text: 'Female', value: 'female' },
+    { key: 'o', text: 'Other', value: 'other' },
+]
 
 const StaffForm = (props: any) => {
 
-    const [staffProfile] = useState(staffInfo);
+    // const [staffProfile] = useState(staffInfo);
 
     useEffect(() => {
         console.log('url id', props.match.params.id)
@@ -48,74 +22,40 @@ const StaffForm = (props: any) => {
 
     return (
         <div className='main-content'>
-            <form>
+            <Form>
                 <div>
-                    <div className="formLeftSide">
-                        <div>
-                            <div className="formCatagory">Staff Information</div>
-                            <div>
-                                <label id="name">First Name</label>
-                                <input id="name" type="text" />
-                            </div>
-                            <div>
-                                <label id="name">Middle Name Initial</label>
-                                <input id="name" type="text" />
-                            </div>
-                            <div>
-                                <label id="name">Last Name</label>
-                                <input id="name" type="text" />
-                            </div>
-                            <div>
-                                <label>Date of birth</label>
-                                <input id="dob" type="text" />
-                            </div>
-                            <div>
-                                <label>Gender</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Address</label>
-                                <input id="address" type="text" />
-                            </div>
-                            <div>
-                                <label>SSN Documented</label>
-                                <input type="radio" name="Dementia" value="YES" /> Yes <input type="radio" name="Dementia" value="NO" /> No
-                            </div>
-                            <div>
-                                <label>Phone Number</label>
-                                <input id="phoneNumber" type="text" />
-                            </div>
-                            <div>
-                                <label>Date Entered</label>
-                                <input id="dateEntered" type="text" />
-                            </div>
-                            {/* Date leave */}
-                        </div>
-                        <div>
-                            <div className="formCatagory">Emergency Contacts</div>
-                            <div>
-                                <label>First Name</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Last Name</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Phone</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Relation</label>
-                                <input id="gender" type="text" />
-                            </div>
-                        </div>
+                    <div className="formColumn wideColumn">
+                        <div className="formCatagory">Staff Information</div>
+                        <Form.Group>
+                            <Form.Input label='First name' placeholder='First Name' width={6} />
+                            <Form.Input label='Middle I. Name' placeholder='Middle Name' width={4} />
+                            <Form.Input label='Last Name' placeholder='Last Name' width={6} />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Input label='Date of Birth' placeholder='Date of Birth' width={8} />
+                            <Form.Select label='Gender' options={options} placeholder='Gender' width={8} />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Input label='Address' placeholder='Address' width={16}/>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Input label='SSN Documented' placeholder='SSN' width={6} />
+                            <Form.Input label='Phone Number' placeholder='Phone Number' width={5} />
+                            <Form.Input label='Date Entered' placeholder='Date Entered' width={5} />
+                        </Form.Group>
+                    </div>
+                    <div className="formColumn">
+                        <div className="formCatagory">Emergency Contacts</div>
+                        <Form.Field control={Input} label='First Name' value='' />
+                        <Form.Field control={Input} label='Last Name' value='' />
+                        <Form.Field control={Input} label='Phone' value='' />
+                        <Form.Field control={Input} label='Relation' value='' />
                     </div>
                 </div>
                 <div className="formBottom">
-                    <input type="submit" value="Submit" className="commonButton" />
+                    <Button type='submit'>Submit</Button>
                 </div>
-            </form>
+            </Form>
         </div>
     );
 }
