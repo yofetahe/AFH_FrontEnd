@@ -1,8 +1,8 @@
 .incidentForm {
-    display: inline-block;
+    /* display: inline-block;
     vertical-align: top;
-    margin-right: 50px;
-    text-align: right;
+    margin-right: 50px; */
+    width: 30%;
 }
 .incidentList {
     display: inline-block;

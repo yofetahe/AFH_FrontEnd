@@ -38,7 +38,9 @@
 }
 
 
-
+.application-body {
+  margin-bottom: 40px;
+}
 .main-content {
   padding: 20px 50px;
 }
@@ -80,10 +82,10 @@
 .textLink {
   cursor: pointer;
 }
-select {
+/* select {
   border-radius: 5px;
   border: solid 1px gray;
   margin: 5px;
   width: 158px;
   height: 27px;
-}
+} */

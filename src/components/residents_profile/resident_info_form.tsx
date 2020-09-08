@@ -1,120 +1,136 @@
 import React from 'react';
+import { Button, Form, Radio } from 'semantic-ui-react';
 
 import './resident_info_form.css';
 
+const options = [
+    { key: 'm', text: 'Male', value: 'male' },
+    { key: 'f', text: 'Female', value: 'female' },
+    { key: 'o', text: 'Other', value: 'other' },
+]
+
 const ResidentRegistration = () => {
+    
+    const handleChange = () => {
+        console.log('handle change');
+    }
+    
     return (
         <div className='main-content'>
             <div className="formTitle">Resident Profile Information</div>
-            <form>
+            <Form className='residentForm'>
+                <div className="formColumn wideColumn">
+                    <div className="formCatagory">Resident Information</div>
+                    <Form.Group>
+                        <Form.Input label='First name' placeholder='First Name' width={6} />
+                        <Form.Input label='Middle I. Name' placeholder='Middle Name' width={4} />
+                        <Form.Input label='Last Name' placeholder='Last Name' width={6} />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Input label='Date of Birth' placeholder='Date of Birth' width={8} />
+                        <Form.Select label='Gender' options={options} placeholder='Gender' width={8} />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Input label='SSN Documented' placeholder='SSN' width={6} />
+                        <Form.Input label='Primary Language' placeholder='Primary Language' width={5} />
+                        <Form.Input label='Date Entered' placeholder='Date Entered' width={5} />
+                    </Form.Group>
+                    {/* Date Discharged */}
+                    <div>
+                        <div className="formCatagory">Medical History</div>
+                        <Form.Group inline>
+                            <label>Special Needs:</label>
+                            <Form.Field control={Radio} label='Yes' value='1' onChange={handleChange} />
+                            <Form.Field control={Radio} label='No' value='2' onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group inline>
+                            <label>Dementia:</label>
+                            <Form.Field control={Radio} label='Yes' value='1' onChange={handleChange} />
+                            <Form.Field control={Radio} label='No' value='2' onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group inline>
+                            <label>Mental Health: </label>
+                            <Form.Field control={Radio} label='Yes' value='1' onChange={handleChange} />
+                            <Form.Field control={Radio} label='No' value='2' onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group inline>
+                            <label>Developmental Disability: </label>
+                            <Form.Field control={Radio} label='Yes' value='1' onChange={handleChange} />
+                            <Form.Field control={Radio} label='No' value='2' onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group inline>
+                            <label>Independency (Safe to get out from home): </label>
+                            <Form.Field control={Radio} label='Yes' value='1' onChange={handleChange} />
+                            <Form.Field control={Radio} label='No' value='2' onChange={handleChange} />
+                        </Form.Group>
+                        <Form.Group inline>
+                            <label>Assistance Required: </label>
+                            <Form.Field control={Radio} label='Yes' name='1' value='1' onChange={handleChange} />
+                            <Form.Field control={Radio} label='No' name='1' value='2' onChange={handleChange} />
+                        </Form.Group>
+                    </div>
+                </div>
+                <div className="formColumn smallColumn">
+                    <div>
+                        <div className="formCatagory">Emergency Contacts</div>
+                        <Form.Field>
+                            <label>First Name</label>
+                            <input placeholder='First Name' />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Middle Name Initial</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Phone</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Relation</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                    </div>
+                    <div>
+                        <div className="formCatagory">Primary Physician</div>
+                        <Form.Field>
+                            <label>Full Name</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Phone</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                    </div>
+                </div>
+                <div className='formColumn smallColumn'>
+                    <div>
+                        <div className="formCatagory">Physician/Medical Group</div>
+                        <Form.Field>
+                            <label>Name</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Phone</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                    </div>
+                    <div>
+                        <div className="formCatagory">Pharmacy</div>
+                        <Form.Field>
+                            <label>Name</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                        <Form.Field>
+                            <label>Phone</label>
+                            <input placeholder='Last Name' />
+                        </Form.Field>
+                    </div>
+                </div>
                 <div>
-                    <div className="formLeftSide">
-                        <div>
-                            <div className="formCatagory">Resident Information</div>
-                            <div>
-                                <label id="name">First Name</label>
-                                <input id="name" type="text" />
-                            </div>
-                            <div>
-                                <label id="name">Middle Name Initial</label>
-                                <input id="name" type="text" />
-                            </div>
-                            <div>
-                                <label id="name">Last Name</label>
-                                <input id="name" type="text" />
-                            </div>
-                            <div>
-                                <label>Date of birth</label>
-                                <input id="dob" type="text" />
-                            </div>
-                            <div>
-                                <label>Gender</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>SSN Documented</label>
-                                <input type="radio" name="Dementia" value="YES" /> Yes <input type="radio" name="Dementia" value="NO" /> No 
-                            </div>
-                            <div>
-                                <label>Primary Language</label>
-                                <input id="primaryLanguage" type="text" />
-                            </div>
-                            <div>
-                                <label>Date Entered</label>
-                                <input id="dateEntered" type="text" />
-                            </div>
-                            {/* Date Discharged */}
-                        </div>
+                    <Button type='submit'>Submit</Button>
+                </div>
+            </Form>
 
-                        <div>
-                            <div className="formCatagory">Medical History</div>
-                            <div>Special Needs: <input type="radio" name="specialNeeds" value="YES" /> Yes <input type="radio" name="specialNeeds" value="NO" /> No </div>
-                            <div>Dementia: <input type="radio" name="Dementia" value="YES" /> Yes <input type="radio" name="Dementia" value="NO" /> No </div>
-                            <div>Mental Health: <input type="radio" name="mentalHealth" value="YES" /> Yes <input type="radio" name="mentalHealth" value="NO" /> No </div>
-                            <div>Developmental Disability: <input type="radio" name="developmentalDisability" value="YES" /> Yes <input type="radio" name="developmentalDisability" value="NO" /> No </div>
-                            <div>Independency (Safe to get out from home): <input type="radio" name="independency" value="YES" /> Yes <input type="radio" name="independency" value="NO" /> No </div>
-                            <div>Assistance Required: <input type="radio" name="assistanceRequired" value="YES" /> Yes <input type="radio" name="assistanceRequired" value="NO" /> No </div>
-                        </div>
-                    </div>
-                    <div className="formRightSide">
-                        <div>
-                            <div className="formCatagory">Emergency Contacts</div>
-                            <div>
-                                <label>First Name</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Last Name</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Phone</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Relation</label>
-                                <input id="gender" type="text" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="formCatagory">Primary Physician</div>
-                            <div>
-                                <label>Full Name</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Phone</label>
-                                <input id="gender" type="text" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="formCatagory">Physician/Medical Group (can be more than one)</div>
-                            <div>
-                                <label>Name</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Phone</label>
-                                <input id="gender" type="text" />
-                            </div>
-                        </div>
-                        <div>
-                            <div className="formCatagory">Pharmacy</div>
-                            <div>
-                                <label>Name</label>
-                                <input id="gender" type="text" />
-                            </div>
-                            <div>
-                                <label>Phone</label>
-                                <input id="gender" type="text" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="formBottom">
-                    <input type="submit" value="Submit" className="commonButton"/>
-                </div>
-            </form>
         </div>
     );
 }

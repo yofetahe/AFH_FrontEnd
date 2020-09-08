@@ -1,3 +1,17 @@
+.residentForm {
+    width: 100%;
+}
+.formColumn {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+.wideColumn {
+    width: 40%;
+}
+.smallColumn {
+    width: 20%;
+}
 .formTitle{
     font-style: italic;
     line-height: 40px;
@@ -14,23 +28,22 @@
 }
 .formBottom {
     display: block;
-    border-top: 1px solid #fff;
 }
 .formCatagory{
     font-weight: bold;
     line-height: 50px;
-    border-bottom: #fff 1px dotted;
+    border-bottom: rgb(49, 49, 49) 1px dotted;
 }
 label {
     font-style: italic;
     margin-right: 10px;
     line-height: 30px;
 }
-input[type=text] {
+/* input[type=text] {
     border: 1px solid rgba(71, 71, 71, 0.5);
     border-radius: 5px;
     height: 20px;
-}
+} */
 input[type=radio] {
     height: 30px;
     vertical-align: middle;

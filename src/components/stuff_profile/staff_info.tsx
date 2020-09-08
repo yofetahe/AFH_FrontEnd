@@ -1,77 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Icon } from 'semantic-ui-react';
 
-const staffInfo = {
-    Id: "1",
-    PublicId: "87959863425",
-    FirstName: "First",
-    MiddleNameInitial: "I",
-    LastName: "Last",
-    DateOfBirth: "10/16/1998",
-    Gender: "Male",
-    Address: "14522 52nd PL W",
-    DriverLicenseNumber: "ERH7654",
-    SSN: "Yes",
-    Phone: "425-000-0000",
-    DateStarted: "01/02/2019",
-    EmergencyContacts: [
-        {
-            FirstName: "EC First Name",
-            LastName: "EC Last Name",
-            Relationship: "Brother",
-            PhoneNumber: "206-887-6266",
-            Email: "email@gmail.com"
-        }
-    ],
-    RequiredDocuments: [
-        {
-            DocumentId: '1',
-            DocumentName: 'Document 1',
-            AddedDate: '8/26/2010'
-        },
-        {
-            DocumentId: '3',
-            DocumentName: 'Document 3',
-            AddedDate: '8/26/2010'
-        }
-    ]
-}
-const requiredDocuments = [
-    {
-        ID: '1',
-        PublicId: '987625462643',
-        DocumentName: 'Document 1',
-        Description: 'Description',
-        DocumentStatus: 'Required'
-    },
-    {
-        ID: '2',
-        PublicId: '958715914134',
-        DocumentName: 'Document 2',
-        Description: 'Description',
-        DocumentStatus: 'Required'
-    },
-    {
-        ID: '3',
-        PublicId: '9876145516134',
-        DocumentName: 'Document 3',
-        Description: 'Description',
-        DocumentStatus: 'Required'
-    },
-    {
-        ID: '4',
-        PublicId: '51141351647987',
-        DocumentName: 'Document 4',
-        Description: 'Description',
-        DocumentStatus: 'Optional'
-    }
-]
+import * as data from '../source/mockData';
+
+import './staff_info.css';
+
+const staffInfo = data.staffInfo;
+
+const requiredDocuments = data.DocumentsList;
 
 const StaffInfo = () => {
     const [staffProfile] = useState(staffInfo);
     const [documents] = useState(requiredDocuments);
     return (
         <div className='main-content'>
+            <div className="commonButtonDiv">
+                <Link to={`/staffForm/${staffProfile.PublicId}`} className="commonButton"> Update </Link>
+            </div>
             <div className='residentData'>
                 <div className="catagoryTitle"> Personal Info </div>
                 <div>
@@ -83,7 +29,8 @@ const StaffInfo = () => {
                     <p> <span>SSN:</span> {staffProfile.SSN} </p>
                     <p> <span>Date Started:</span> {staffProfile.DateStarted} </p>
                 </div>
-
+            </div>
+            <div className='residentData'>
                 <div className='catagoryTitle'>Emergency Contacts</div>
                 {staffProfile.EmergencyContacts.map(ec => {
                     return (
@@ -97,18 +44,15 @@ const StaffInfo = () => {
                 })}
             </div>
             <div className='residentData'>
-                <div className="catagoryTitle"> Medical History </div>
+                <div className="catagoryTitle"> Resident's Document </div>
                 {documents.map(doc => {
                     return (
                         <div className='documentList'>
                             {doc.DocumentName}: &nbsp;
-                            {staffProfile && staffProfile.RequiredDocuments.some(reqDoc => reqDoc.DocumentId === doc.ID) ? 'V' : 'X'}
+                            {staffProfile && staffProfile.RequiredDocuments.some(reqDoc => reqDoc.DocumentId === doc.Id) ? <Icon color='blue' name='check' /> : <Icon color='red' name='times rectangle' />}
                         </div>
                     );
                 })}
-            </div>
-            <div className="commonButtonDiv">
-                <Link to={`/staffForm/${staffProfile.PublicId}`} className="commonButton"> Update </Link>
             </div>
         </div>
     );

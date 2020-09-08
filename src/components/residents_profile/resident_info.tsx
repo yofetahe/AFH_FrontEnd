@@ -3,55 +3,13 @@ import { Link } from 'react-router-dom';
 
 import './resident_info.css';
 import DefaultPhoto from '../../images/defaultPhoto.png';
+import * as data from '../source/mockData';
 
-const residentData = {
-    ID: "1",
-    PublicId: "0205284052462",
-    FirstName: "James",
-    MiddleNameInitial: "M",
-    LastName: "Thomas",
-    Geneder: "Male",
-    DateOfBirth: "10/04/1945",
-    PlaceOfBirth: "Alaska",
-    PrimaryLanguage: "English",
-    DateEntered: "01/10/2018",
-    PhotoPath: "",
-    EmergencyContacts: [
-        {
-            FirstName: "EC First Name",
-            LastName: "EC Last Name",
-            Relationship: "Brother",
-            PhoneNumber: "206-887-6266",
-            Email: "email@gmail.com"
-        }
-    ],
-    MedicalHistory: {
-        SpecialNeeds: "Yes",
-        Dementia: "No",
-        MentalHealth: "NO",
-        DevelopmentalDisability: "No",
-        Independency: "Yes",
-        AssistnaceRequired: "Yes"
-    },
-    PrimaryPhysician: {
-        FullName: "Barbara John",
-        Phone: "206-000-0000"
-    },
-    MedicalGroup: [
-        {
-            Name: "",
-            Phone: ""
-        }
-    ],
-    Pharmacy: {
-        Name: "Axios",
-        Phone: "425-000-0000"
-    }
-}
+const residentData = data.resident;
 
 const ResidentInfo = (props: any) => {
 
-    const [residentInfo, setResidentInfo] = useState(residentData);
+    const [residentInfo] = useState(residentData);
 
     return (
         <div className='main-content'>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Table, Icon, Button } from 'semantic-ui-react';
 
 import './index.css';
 
@@ -55,44 +56,58 @@ const staffsData = [
 ];
 
 const Staff = () => {
-    const [staffs, setStaffs] = useState(staffsData);
+    const [staffs] = useState(staffsData);
     return (
         <div className='main-content'>
             <div className="residentHeader">
-                <Link to={'/staffForm'} className="commonButton">Add Staff</Link>
+                <Link to={'/staffForm'}>
+                    <Button icon labelPosition='left'>
+                        <Icon name='add' />
+                        Staff
+                    </Button>
+                </Link>
             </div>
-            <div className="table">
-                <head className="tableRow">
-                    <div className="tableCell">#</div>
-                    <div className="tableCell">Full Name</div>
-                    <div className="tableCell">Address</div>
-                    <div className="tableCell">Phone</div>
-                    <div className="tableCell">Date Started</div>
-                    <div className="tableCell">&nbsp;</div>
-                    <div className="tableCell">&nbsp;</div>
-                    <div className="tableCell">&nbsp;</div>
-                </head>
-                {staffs.map((staff, index) => {
-                    return (
-                        <div className="tableRow">
-                            <div className="tableCell">{index + 1}</div>
-                            <div className="tableCell">{staff.FirstName} {staff.LastName}</div>
-                            <div className="tableCell">{staff.Address}</div>
-                            <div className="tableCell">{staff.Phone}</div>
-                            <div className="tableCell">{staff.DateStarted}</div>
-                            <div className="tableCell">
-                                <Link to={`/staff/document/${staff.PublicId}`} className="sideButton">Documents</Link>
-                            </div>
-                            <div className="tableCell">
-                                <Link to={`/staff/${staff.PublicId}`} className="sideButton">View</Link>
-                            </div>
-                            <div className="tableCell">
-                                <div className="sideButton">Leave</div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+            <Table singleLine>
+                <Table.Header>
+                    <Table.Row>
+                        <Table.HeaderCell>#</Table.HeaderCell>
+                        <Table.HeaderCell>Full Name</Table.HeaderCell>
+                        <Table.HeaderCell>Address</Table.HeaderCell>
+                        <Table.HeaderCell>Phone</Table.HeaderCell>
+                        <Table.HeaderCell>Date Stared</Table.HeaderCell>
+                        <Table.HeaderCell>&nbsp;</Table.HeaderCell>
+                        <Table.HeaderCell>&nbsp;</Table.HeaderCell>
+                        <Table.HeaderCell>&nbsp;</Table.HeaderCell>
+                    </Table.Row>
+                </Table.Header>
+
+                <Table.Body>
+                    {staffs.map((staff, index) => {
+                        return (
+                            <Table.Row>
+                                <Table.Cell>{index + 1}</Table.Cell>
+                                <Table.Cell>{staff.FirstName} {staff.LastName}</Table.Cell>
+                                <Table.Cell>{staff.Address}</Table.Cell>
+                                <Table.Cell>{staff.Phone}</Table.Cell>
+                                <Table.Cell>{staff.DateStarted}</Table.Cell>
+                                <Table.Cell>
+                                    <Link to={`/staff/document/${staff.PublicId}`}>
+                                        <Icon color='blue' name='book' />
+                                    </Link>
+                                </Table.Cell>
+                                <Table.Cell>
+                                    <Link to={`/staff/${staff.PublicId}`}>
+                                        <Icon color='blue' name='external square alternate' />
+                                    </Link>
+                                </Table.Cell>
+                                <Table.Cell>
+                                    <Icon color='red' name='times rectangle' />
+                                </Table.Cell>
+                            </Table.Row>
+                        );
+                    })}
+                </Table.Body>
+            </Table>
         </div>
     );
 }

@@ -2,62 +2,10 @@ import React, { useState } from 'react';
 
 import Menu from './admin_menu';
 import './admin.css';
+import * as data from '../source/mockData';
 
-const purchase = [
-    {
-        Id: 1,
-        PublicId: '9797136141',
-        ItemName: 'Item Name',
-        Catagory: 'Food',
-        Status: 'Active'
-    },
-    {
-        Id: 2,
-        PublicId: '9797136142',
-        ItemName: 'Item Name',
-        Catagory: 'Cleaning',
-        Status: 'Active'
-    },
-    {
-        Id: 3,
-        PublicId: '9797136143',
-        ItemName: 'Item Name',
-        Catagory: 'Sanitizer',
-        Status: 'Active'
-    },
-    {
-        Id: 4,
-        PublicId: '9797136144',
-        ItemName: 'Item Name',
-        Catagory: 'Drinking',
-        Status: 'Active'
-    },
-    {
-        Id: 5,
-        PublicId: '9797136145',
-        ItemName: 'Item Name',
-        Catagory: 'Cleaning',
-        Status: 'Active'
-    }
-]
-const categories = [
-    {
-        Id: '1',
-        CategoryName: 'Cleaning'
-    },
-    {
-        Id: '2',
-        CategoryName: 'Sanitaizer'
-    },
-    {
-        Id: '3',
-        CategoryName: 'Food'
-    },
-    {
-        Id: '4',
-        CategoryName: 'Drinking'
-    }
-]
+const purchase = data.purchase;
+const categories = data.itemCategories;
 
 const PurchaseItems = () => {
     const [items] = useState(purchase);

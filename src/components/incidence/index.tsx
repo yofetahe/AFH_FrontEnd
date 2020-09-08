@@ -1,118 +1,34 @@
 import React, { useState } from 'react';
+import { Form, Button, Radio } from 'semantic-ui-react';
 
 import './index.css';
+import * as data from '../source/mockData';
 
-const incidentList = [
-    {
-        id: 1,
-        public_id: "945624576241",
-        incident_title: "Fall down",
-        description: "fall from chair",
-        careGiver_action: "hold ice on the area",
-        resident_id: "987959567364",
-        resident_name: "John Kris",
-        incident_date: "8/29/2020",
-        incident_level: "Minor",
-        incident_pictures_path: [
-            "path1",
-            "path2"
-        ],
-        createBy: "2",
-        createDate: "8/29/2020",
-        reportedTo: "Tenagne Ashenafi",
-        reportedBy: "Phone"
-    },
-    {
-        id: 2,
-        public_id: "945624576242",
-        incident_title: "Fall down",
-        description: "fall from chair",
-        careGiver_action: "hold ice on the area",
-        resident_id: "987959567364",
-        resident_name: "John Kris",
-        incident_date: "8/3/2020",
-        incident_level: "Moderate",
-        incident_pictures_path: [
-            "path1",
-            "path2"
-        ],
-        createBy: "1",
-        createDate: "8/3/2020",
-        reportedTo: "Sirgut Ashenafi",
-        reportedBy: "paper"
-    }
-]
-
-const incident_level = [
-    "Minor", "Moderate", "Serious", "Severe", "Critical", "Maximal"
-]
-
-const report_to = [
-    "Sirgut Ashenafi", "Tenagne Ashenafi"
-]
-
-const reported_by = [
-    "Phone", "Written"
-]
+const incidentList = data.incidentList;
+const incident_level = data.incident_level;
+const report_to = data.report_to;
+const reported_by = data.reported_by;
+const options = data.residents.map(m => ({key: m.PublicId, text: m.FirstName + ' ' + m.LastName, value: m.PublicId}));
 
 const Incidence = () => {
     const [incidents] = useState(incidentList);
     return (
-        <div className='main-content external-div'>
+        <div className='main-content '>
             <div className='incidentForm'>
-                <form>
-                    <div>
-                        <label>Incident Title</label>
-                        <input type='text' />
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <input type='text' />
-                    </div>
-                    <div>
-                        <label>Action/Treatment</label>
-                        <input type='text' />
-                    </div>
-                    <div>
-                        <label>Resident Name</label>
-                        <input type='text' />
-                    </div>
-                    <div>
-                        <label>Date</label>
-                        <input type='text' />
-                    </div>
-                    <div>
-                        <label>Incident Level</label>
-                        <select id="incidentLevel">
-                            <option value='-'></option>
-                            {incident_level && incident_level.map(incident => {
-                                return <option id={incident} value={incident}>{incident}</option>
-                            })}
-                        </select>
-                    </div>
-                    <div>
-                        <label>Reported To</label>
-                        <select id="reportedTo">
-                            <option value='-'></option>
-                            {report_to && report_to.map(report => {
-                                return <option id={report.trim()} value={report}>{report}</option>
-                            })}
-                        </select>
-                    </div>
-                    <div>
-                        <label>Reported By</label>
-                        <input type="text" name="reportedBy" list="reportedBy" />
-                        <datalist id="reportedBy">
-                            {reported_by && reported_by.map(report => {
-                                return <option id={report} value={report} />
-                            })}
-                        </datalist>
-                    </div>
-                    <input type='submit' value='Add' className='commonButton' />
-                </form>
+                <Form>
+                    <Form.Input label='Incident Title' placeholder='title' />
+                    <Form.TextArea label='Description' placeholder='Tell us what happen...' />
+                    <Form.TextArea label='Action taken/Treatment' placeholder='What did you do?' />
+                    <Form.Select label='Medicine Name' options={options} placeholder='Medications' />
+                    <Form.Input label='Date' placeholder='mm/d/yyyy' />
+                    <Form.Select label='Incident Level' options={incident_level} placeholder='Medications' />
+                    <Form.Select label='Reported To' options={report_to} placeholder='Medications' />
+                    <Form.Select label='Reported By' options={reported_by} placeholder='Medications' />
+                    <Button type='submit'>Add</Button>
+                </Form>                
             </div>
-            <div className='incidentList'>
-                {incidentList && incidentList
+            {/* <div className='incidentList'>
+                {incidents && incidents
                     .sort(function (a, b) {
                         if (new Date(a.incident_date) < new Date(b.incident_date)) { return 1; }
                         if (new Date(a.incident_date) > new Date(b.incident_date)) { return -1; }
@@ -129,8 +45,8 @@ const Incidence = () => {
                             </div>
                         );
                     })}
-                <div>Pagination Place holder - 1 2</div>
-            </div>
+                <div>Pagination Place holder - 1 2</div> 
+            </div>*/}
         </div>
     );
 }
