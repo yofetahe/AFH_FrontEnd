@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as typeSrc from '../source/typeSource';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 
 import './medication.css';
 import DefaultPhoto from '../../images/defaultPhoto.png';
@@ -39,14 +39,18 @@ const Medication = () => {
                                     <Link to={{
                                         pathname: `/medication/distribution/${resident.PublicId}`,
                                         state: { resData: resident }
-                                    }}>
-                                        <Icon circular color='teal' name='triangle right' />
+                                    }}>                                        
+                                        <Button icon>
+                                            <Icon color='teal' name='sync alternate' />
+                                        </Button>
                                     </Link>
                                     <Link to={{
-                                        pathname: `/medication/add/${resident.PublicId}`,
+                                        pathname: `/medication/${resident.PublicId}`,
                                         state: { resData: resident }
                                     }}>
-                                        <Icon circular color='teal' name='add' />
+                                        <Button icon>
+                                            <Icon color='teal' name='add' />
+                                        </Button>
                                     </Link>
                                 </span>
                             </div>
@@ -62,6 +66,12 @@ const Medication = () => {
                                                         <Icon color='teal' name='pills' />
                                                         {med.Name} ({med.Dose}) - {med.Type} {med.Time && ('(' + med.Time.map(t => (t)) + ')')}
                                                         {med.StartDate && med.EndDate && (' - from ' + med.StartDate + ' to ' + med.EndDate)} &nbsp;
+                                                        <Link to={{
+                                                            pathname: `/medication/${resident.PublicId}/${med.PublicId}`,
+                                                            state: { resData: resident }
+                                                        }}>
+                                                            <Icon color='blue' name='edit' />                                                            
+                                                        </Link>
                                                         <span className='terminateMedication'><Icon color='red' name='times rectangle' /></span>
                                                     </div>
                                                 );

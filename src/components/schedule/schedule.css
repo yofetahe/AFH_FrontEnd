@@ -1,0 +1,12 @@
+#scheduleRaw{    
+    text-align: center;
+    margin-bottom: 10px;
+    width: 150px;
+}
+#monthDropdown {
+    display: inline-block;
+    margin-right: 20px;
+}
+#scheduleAddButton {
+    display: inline-block;
+}

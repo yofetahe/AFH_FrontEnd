@@ -205,10 +205,12 @@ export const medicationCategories = [
 export const residentsMedications: type.residentsMedications[] = [
     {
         ID: "1",
+        PublicId: "1397151341",
         ResidentId: "0205284052462",
         Medications: [
             {
                 Id: '1',
+                PublicId: "858446531",
                 Name: 'Medication Name',
                 Dose: '100ml',
                 Type: '3X/day',
@@ -220,6 +222,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '2',
+                PublicId: "858446532",
                 Name: 'Medication Name',
                 Dose: '250ml',
                 Type: 'Needed',
@@ -227,6 +230,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '1',
+                PublicId: "858446533",
                 Name: 'Medication Name',
                 Dose: '150ml',
                 Type: '3X/day',
@@ -240,10 +244,12 @@ export const residentsMedications: type.residentsMedications[] = [
     },
     {
         ID: "2",
+        PublicId: "1397151342",
         ResidentId: "0985425246264",
         Medications: [
             {
                 Id: '1',
+                PublicId: "858446534",
                 Name: 'Medication Name',
                 Dose: '100ml',
                 Type: '3X/day',
@@ -255,6 +261,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '2',
+                PublicId: "858446535",
                 Name: 'Medication Name',
                 Dose: '250ml',
                 Type: 'Needed',
@@ -262,6 +269,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '1',
+                PublicId: "858446536",
                 Name: 'Medication Name',
                 Dose: '150ml',
                 Type: '3X/day',
@@ -275,10 +283,12 @@ export const residentsMedications: type.residentsMedications[] = [
     },
     {
         ID: "3",
+        PublicId: "1397151343",
         ResidentId: "058062452462725",
         Medications: [
             {
                 Id: '1',
+                PublicId: "858446537",
                 Name: 'Medication Name',
                 Dose: '100ml',
                 Type: '3X/day',
@@ -290,6 +300,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '2',
+                PublicId: "858446538",
                 Name: 'Medication Name',
                 Dose: '250ml',
                 Type: 'Needed',
@@ -297,6 +308,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '1',
+                PublicId: "858446539",
                 Name: 'Medication Name',
                 Dose: '150ml',
                 Type: '3X/day',
@@ -310,10 +322,12 @@ export const residentsMedications: type.residentsMedications[] = [
     },
     {
         ID: "4",
+        PublicId: "1397151344",
         ResidentId: "093485464546",        
         Medications: [
             {
                 Id: '1',
+                PublicId: "858446511",
                 Name: 'Medication Name',
                 Dose: '100ml',
                 Type: '3X/day',
@@ -325,6 +339,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '2',
+                PublicId: "858446521",
                 Name: 'Medication Name',
                 Dose: '250ml',
                 Type: 'Needed',
@@ -332,6 +347,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '1',
+                PublicId: "858446541",
                 Name: 'Medication Name',
                 Dose: '150ml',
                 Type: '3X/day',
@@ -345,10 +361,12 @@ export const residentsMedications: type.residentsMedications[] = [
     },
     {
         ID: "5",
+        PublicId: "1397151345",
         ResidentId: "986985764563453",        
         Medications: [
             {
                 Id: '1',
+                PublicId: "858446551",
                 Name: 'Medication Name',
                 Dose: '100ml',
                 Type: '3X/day',
@@ -360,6 +378,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '2',
+                PublicId: "858446561",
                 Name: 'Medication Name',
                 Dose: '250ml',
                 Type: 'Needed',
@@ -367,6 +386,7 @@ export const residentsMedications: type.residentsMedications[] = [
             },
             {
                 Id: '1',
+                PublicId: "858446571",
                 Name: 'Medication Name',
                 Dose: '150ml',
                 Type: '3X/day',
@@ -559,9 +579,63 @@ export const reported_by = [
     { key: 'written', value: 'written', text: 'Written' }
 ]
 
+export const staffsData = [
+    {
+        Id: "1",
+        PublicId: "87959863421",
+        FirstName: "Martin",
+        LastName: "Odongu",
+        DateOfBirth: "10/16/1998",
+        Address: "14522 52nd PL W",
+        DriverLicenseNumber: "ERH7654",
+        SSN: "Yes",
+        Phone: "425-000-0000",
+        DateStarted: "01/02/2019",
+        Status: "Active"
+    },
+    {
+        Id: "1",
+        PublicId: "87959863422",
+        FirstName: "Nancy",
+        LastName: "Lambada",
+        DateOfBirth: "10/16/1998",
+        Address: "14522 52nd PL W",
+        DriverLicenseNumber: "ERH7654",
+        SSN: "Yes",
+        Phone: "425-000-0000",
+        DateStarted: "01/02/2019",
+        Status: "Active"
+    },
+    {
+        Id: "1",
+        PublicId: "87959863423",
+        FirstName: "Kerim",
+        LastName: "Husen",
+        DateOfBirth: "10/16/1998",
+        Address: "14522 52nd PL W",
+        DriverLicenseNumber: "ERH7654",
+        SSN: "Yes",
+        Phone: "425-000-0000",
+        DateStarted: "01/02/2019",
+        Status: "Active"
+    },
+    {
+        Id: "1",
+        PublicId: "87959863424",
+        FirstName: "Obang",
+        LastName: "Ochasa",
+        DateOfBirth: "10/16/1998",
+        Address: "14522 52nd PL W",
+        DriverLicenseNumber: "ERH7654",
+        SSN: "Yes",
+        Phone: "425-000-0000",
+        DateStarted: "01/02/2019",
+        Status: "Active"
+    }
+];
 export const staffInfo = {
     Id: "1",
-    PublicId: "87959863425",
+    PublicId: "87959863421",
     FirstName: "First",
     MiddleNameInitial: "I",
     LastName: "Last",
@@ -594,3 +668,49 @@ export const staffInfo = {
         }
     ]
 }
+
+export const workSchedule = [
+    {
+        Id: '1',
+        PublicId: '97242569651',
+        StaffId: '87959863421',
+        schedule: [
+            {
+                ID: '20-09', //year+weakNo -> 20 - year, 09  - Month
+                Value: ['Wed Sep 09 2020', 'Thu Sep 10 2020', 'Fri Sep 11 2020', 'Mon Sep 14 2020', 'Tue Sep 15 2020']
+            }
+        ]
+    },
+    {
+        Id: '2',
+        PublicId: '97242569652',
+        StaffId: '87959863422',
+        schedule: [
+            {
+                ID: '20-09', //year+weakNo -> 20 - year, 09  - Month
+                Value: ['Mon Sep 07 2020', 'Tue Sep 08 2020', 'Sat Sep 12 2020', 'Sun Sep 13 2020']
+            },
+            {
+                ID: '20-10',
+                Value: ['Mon Sep 07 2020', 'Tue Sep 08 2020', 'Sat Sep 12 2020', 'Sun Sep 13 2020']
+            }
+        ]
+    }
+]
+export const months = [
+    { key: '1', value: 'January', text: 'January' },
+    { key: '2', value: 'February', text: 'February' },
+    { key: '3', value: 'March', text: 'March' },
+    { key: '4', value: 'April', text: 'April' },
+    { key: '5', value: 'May', text: 'May' },
+    { key: '6', value: 'June', text: 'June' },
+    { key: '7', value: 'July', text: 'July' },
+    { key: '8', value: 'August', text: 'August' },
+    { key: '9', value: 'September', text: 'September' },
+    { key: '10', value: 'October', text: 'October' },
+    { key: '11', value: 'November', text: 'November' },
+    { key: '12', value: 'December', text: 'December' },
+]
+export const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+export const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const rowsOfMonth = [1, 2, 3, 4, 5];

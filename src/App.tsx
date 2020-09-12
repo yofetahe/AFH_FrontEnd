@@ -18,6 +18,7 @@ import MedicationDistribution from './components/medication/medicineDistribution
 import Incidence from './components/incidence';
 import Purchase from './components/purchase';
 import Schedule from './components/schedule';
+import ScheduleForm from './components/schedule/scheduleForm';
 import Documents from './components/admin/requiredDocument';
 import PurchaseItems from './components/admin/purchaseItems';
 import MedicationItems from './components/admin/medications';
@@ -42,11 +43,13 @@ function App() {
           <Route exact path="/staffForm/:id" component={StaffForm} />
           <Route exact path="/staff/document/:id" component={StaffDocument} />
           <Route exact path="/medication" component={Medication} />
-          <Route strict exact path="/medication/add/:id" component={MedicationAddForm} />
-          <Route strict exact path="/medication/distribution/:id" component={MedicationDistribution} />
+          <Route strict exact path="/medication/:residentId" component={MedicationAddForm} />
+          <Route strict exact path="/medication/distribution/:residentId" component={MedicationDistribution} />
+          <Route strict exact path="/medication/:residentId/:medId" component={MedicationAddForm} />
           <Route exact path="/incidence" component={Incidence} />
           <Route exact path="/purchase" component={Purchase} />
-          <Route exact path="/schedule" component={Schedule} />
+          <Route strict exact path="/schedule" component={Schedule} />
+          <Route strict exact path="/scheduleForm" component={ScheduleForm} />          
           <Route strict exact path="/admin" component={Documents} />
           <Route strict exact path="/admin/documents" component={Documents} />
           <Route strict exact path="/admin/purchaseItems" component={PurchaseItems} />

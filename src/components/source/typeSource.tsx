@@ -22,6 +22,7 @@ export interface Resident {
 
 export interface Medication {
     Id: string;
+    PublicId: string;
     Name: string;
     Dose: string;
     Type: string; //timely or needed
@@ -34,6 +35,7 @@ export interface Medication {
 
 export interface residentsMedications {
     ID: string;
+    PublicId: string;
     ResidentId: string;
     Medications: Array<Medication>;
 }
