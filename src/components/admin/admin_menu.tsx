@@ -7,7 +7,8 @@ const Admin = () => {
             <span>ADMIN &gt; </span>
             <Link to={'/admin/documents'}>Documents</Link> &nbsp; | &nbsp;
             <Link to={'/admin/purchaseItems'}>Purchase Items</Link> &nbsp; | &nbsp;
-            <Link to={'/admin/medications'}>Medications</Link>
+            <Link to={'/admin/medications'}>Medications</Link> &nbsp; | &nbsp;
+            <Link to={'/admin/branches'}>Branch</Link>
         </div>
     );
 }

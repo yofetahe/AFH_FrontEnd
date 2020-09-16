@@ -3,57 +3,9 @@ import { Link } from 'react-router-dom';
 import { Table, Icon, Button } from 'semantic-ui-react';
 
 import './index.css';
+import * as data from '../source/mockData';
 
-const staffsData = [
-    {
-        Id: "1",
-        PublicId: "87959863425",
-        FirstName: "First",
-        LastName: "Last",
-        DateOfBirth: "10/16/1998",
-        Address: "14522 52nd PL W",
-        DriverLicenseNumber: "ERH7654",
-        SSN: "Yes",
-        Phone: "425-000-0000",
-        DateStarted: "01/02/2019"
-    },
-    {
-        Id: "1",
-        PublicId: "87959863425",
-        FirstName: "First",
-        LastName: "Last",
-        DateOfBirth: "10/16/1998",
-        Address: "14522 52nd PL W",
-        DriverLicenseNumber: "ERH7654",
-        SSN: "Yes",
-        Phone: "425-000-0000",
-        DateStarted: "01/02/2019"
-    },
-    {
-        Id: "1",
-        PublicId: "87959863425",
-        FirstName: "First",
-        LastName: "Last",
-        DateOfBirth: "10/16/1998",
-        Address: "14522 52nd PL W",
-        DriverLicenseNumber: "ERH7654",
-        SSN: "Yes",
-        Phone: "425-000-0000",
-        DateStarted: "01/02/2019"
-    },
-    {
-        Id: "1",
-        PublicId: "87959863425",
-        FirstName: "First",
-        LastName: "Last",
-        DateOfBirth: "10/16/1998",
-        Address: "14522 52nd PL W",
-        DriverLicenseNumber: "ERH7654",
-        SSN: "Yes",
-        Phone: "425-000-0000",
-        DateStarted: "01/02/2019"
-    }
-];
+const staffsData = data.staffsData;
 
 const Staff = () => {
     const [staffs] = useState(staffsData);

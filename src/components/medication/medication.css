@@ -16,7 +16,7 @@
 }
 .personalInfoBlock {
     border-bottom: dotted 1px #fff;
-    padding: 10px 0px;
+    padding: 20px 0px;
     margin-bottom: 10px;
 }
 #name, #dob, #gender {
@@ -47,4 +47,5 @@
 }
 .terminateMedication {
     cursor: pointer;
+    margin-left: 10px;
 }
