@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Form, Button, Radio } from 'semantic-ui-react';
+import React from 'react';
+import { Form, Button } from 'semantic-ui-react';
 
 import './index.css';
 import * as data from '../source/mockData';
 
-const incidentList = data.incidentList;
+// const incidentList = data.incidentList;
 const incident_level = data.incident_level;
 const report_to = data.report_to;
 const reported_by = data.reported_by;
 const options = data.residents.map(m => ({key: m.PublicId, text: m.FirstName + ' ' + m.LastName, value: m.PublicId}));
 
 const Incidence = () => {
-    const [incidents] = useState(incidentList);
+    // const [incidents] = useState(incidentList);
     return (
         <div className='main-content '>
             <div className='incidentForm'>

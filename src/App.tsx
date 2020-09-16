@@ -5,20 +5,29 @@ import './App.css';
 import Header from './components/common/header';
 import Footer from './components/common/footer';
 import Menu from './components/common/menu';
+
 import Residents from './components/residents_profile/index';
 import ResidentInfo from './components/residents_profile/resident_info';
 import ResidentInfoForm from './components/residents_profile/resident_info_form';
+
 import Staff from './components/stuff_profile';
 import StaffForm from './components/stuff_profile/staff_info_form';
 import StaffInfo from './components/stuff_profile/staff_info';
 import StaffDocument from './components/stuff_profile/staff_documents';
+
 import Medication from './components/medication';
 import MedicationAddForm from './components/medication/medicationAddForm';
 import MedicationDistribution from './components/medication/medicineDistribution';
+
+import Appointment from './components/appointment';
+
 import Incidence from './components/incidence';
+
 import Purchase from './components/purchase';
+
 import Schedule from './components/schedule';
 import ScheduleForm from './components/schedule/scheduleForm';
+
 import Documents from './components/admin/requiredDocument';
 import PurchaseItems from './components/admin/purchaseItems';
 import MedicationItems from './components/admin/medications';
@@ -46,6 +55,7 @@ function App() {
           <Route strict exact path="/medication/:residentId" component={MedicationAddForm} />
           <Route strict exact path="/medication/distribution/:residentId" component={MedicationDistribution} />
           <Route strict exact path="/medication/:residentId/:medId" component={MedicationAddForm} />
+          <Route strict exact path="/appointment" component={Appointment} />
           <Route exact path="/incidence" component={Incidence} />
           <Route exact path="/purchase" component={Purchase} />
           <Route strict exact path="/schedule" component={Schedule} />

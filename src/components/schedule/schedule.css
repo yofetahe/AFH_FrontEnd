@@ -10,3 +10,15 @@
 #scheduleAddButton {
     display: inline-block;
 }
+
+#scheduleForm {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-right: 20px;
+}
+#scheduleDates {
+    display: inline-block;
+    width: 65%;
+    vertical-align: top;
+}
