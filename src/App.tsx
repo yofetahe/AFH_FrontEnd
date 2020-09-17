@@ -20,6 +20,7 @@ import MedicationAddForm from './components/medication/medicationAddForm';
 import MedicationDistribution from './components/medication/medicineDistribution';
 
 import Appointment from './components/appointment';
+import AppointmentForm from './components/appointment/appointmentForm';
 
 import Incidence from './components/incidence';
 
@@ -56,6 +57,8 @@ function App() {
           <Route strict exact path="/medication/distribution/:residentId" component={MedicationDistribution} />
           <Route strict exact path="/medication/:residentId/:medId" component={MedicationAddForm} />
           <Route strict exact path="/appointment" component={Appointment} />
+          <Route strict exact path="/appointmentForm" component={AppointmentForm} />
+          <Route strict exact path="/appointment/:appId" component={AppointmentForm} />
           <Route exact path="/incidence" component={Incidence} />
           <Route exact path="/purchase" component={Purchase} />
           <Route strict exact path="/schedule" component={Schedule} />

@@ -714,3 +714,62 @@ export const months = [
 export const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 export const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 export const rowsOfMonth = [1, 2, 3, 4, 5];
+
+export const appointmentList = [
+    {
+        Id: '1',
+        PublicId: '9023234235',
+        ResidentId: '0205284052462',
+        ResidentName: 'James Thomas',
+        AppointmentDate: 'Sep 16 2020',
+        TimeFrom: '11:00AM',
+        TimeTo: '12:00PM',
+        Type: 'Doctor Appointment',
+        Reason: 'Medical treatment',
+        Address: '14522 52nd Pl W, WA, USA',
+        ContactPerson: 'Dr. Alen Henery',
+        Phone: '(206) 000 0000'
+    },
+    {
+        Id: '2',
+        PublicId: '9023234232',
+        ResidentId: '058062452462725',
+        ResidentName: 'Resident Two',
+        AppointmentDate: 'Sep 16 2020',
+        TimeFrom: '11:00AM',
+        TimeTo: '12:00PM',
+        Type: 'Doctor Appointment',
+        Reason: 'Medical treatment',
+        Address: '14522 52nd Pl W, WA, USA',
+        ContactPerson: 'Dr. Alen Henery',
+        Phone: '(206) 000 0000'
+    },
+    {
+        Id: '3',
+        PublicId: '9023234233',
+        ResidentId: '0985425246264',
+        ResidentName: 'Resident Three',
+        AppointmentDate: 'Sep 17 2020',
+        TimeFrom: '11:00AM',
+        TimeTo: '12:00PM',
+        Type: 'Doctor Appointment',
+        Reason: 'Medical treatment',
+        Address: '14522 52nd Pl W, WA, USA',
+        ContactPerson: 'Dr. Alen Henery',
+        Phone: '(206) 000 0000'
+    },
+    {
+        Id: '4',
+        PublicId: '9023234234',
+        ResidentId: '0985425246264',
+        ResidentName: 'Martin Odongu',
+        AppointmentDate: 'Sep 18 2020',
+        TimeFrom: '11:00AM',
+        TimeTo: '12:00PM',
+        Type: 'Doctor Appointment',
+        Reason: 'Medical treatment',
+        Address: '14522 52nd Pl W, WA, USA',
+        ContactPerson: 'Dr. Alen Henery',
+        Phone: '(206) 000 0000'
+    }
+]
