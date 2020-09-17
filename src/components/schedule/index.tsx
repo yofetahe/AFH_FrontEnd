@@ -12,7 +12,6 @@ const workSchedule = data.workSchedule;
 const staffs = data.staffsData;
 const staffsList = data.staffsData.map(staff => ({ key: staff.Id, text: staff.FirstName + ' ' + staff.LastName, value: staff.PublicId }));
 
-
 type colorsChoice = "red" | "blue" | "green" | "brown" | "purple" | "orange" | "yellow" | "olive" | "teal" | "violet" | "pink" | "grey" | "black" | undefined
 
 interface scheduleDate {
