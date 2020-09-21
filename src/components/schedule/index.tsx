@@ -105,7 +105,7 @@ const Schedule = () => {
             addSign.style.display = 'none';
         }
 
-        const checkSign = document.getElementById('check_'+month + '' + monthDay + '' + year);
+        const checkSign = document.getElementById('check_' + month + '' + monthDay + '' + year);
         if (checkSign !== null) {
             checkSign.style.display = 'block';
         }
@@ -150,19 +150,26 @@ const Schedule = () => {
                 <div id='scheduleDates'>
                     {daysArray.map((monthDay, index) => {
                         const schedule = mergedScheduleDate.find(m => Number(m.DAY) === monthDay);
+                        const unassignedDate = month.substring(0, 3) + ' ' + (monthDay > 10 ? monthDay : '0' + monthDay) + ' ' + today.getFullYear();
+                        const todayPicker = today.toString().includes(unassignedDate);
                         return schedule !== undefined ? (
                             <Label key={'delete_' + index} as='a' color={getColor(schedule.ID)} basic id='scheduleRaw'>
                                 {schedule.NAME} <br />
                                 {schedule.DATE}
                                 <Divider />
-                                <Icon name='delete' circular onClick={() => handleDeleteSchedule(schedule.ID)} />
+                                <Icon name={todayPicker ? 'delete' : 'delete calendar'}
+                                    size='large' 
+                                    onClick={() => handleDeleteSchedule(schedule.ID)} />
                             </Label>
                         ) : (
                                 <Label key={'add_' + index} as='a' color='grey' basic id='scheduleRaw'>
                                     Not Assigned <br />
-                                    <Label.Detail>{month} {monthDay} {today.getFullYear()}</Label.Detail>
+                                    <Label.Detail>{unassignedDate}</Label.Detail>
                                     <Divider />
-                                    <Icon id={month + '' + monthDay + '' + today.getFullYear()} name='add' circular onClick={() => handleAddSchedule(month, monthDay, today.getFullYear())} />
+                                    <Icon id={month + '' + monthDay + '' + today.getFullYear()} 
+                                        name={todayPicker ? 'calendar plus' : 'calendar plus outline'}
+                                        size='large'                                         
+                                        onClick={() => handleAddSchedule(month, monthDay, today.getFullYear())} />
                                     <Icon circular color='teal' name='check' id={'check_' + month + '' + monthDay + '' + today.getFullYear()} style={{ display: 'none' }} />
                                 </Label>
                             );

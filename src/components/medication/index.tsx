@@ -24,14 +24,14 @@ const Medication = () => {
             <div className='dateTimeBar'>
                 <span>Date: {todayDate} (Time: {currentHour})</span>
             </div>
-            {residents.map(resident => {
+            {residents.map((resident, index) => {
                 return (
                     <div key={resident.ID} className='medicationContent'>
-                        <div className='residentPicture'>
+                        <div key={'pic_' + index} className='residentPicture'>
                             <img src={DefaultPhoto} alt='pic' />
                         </div>
-                        <div className='residentMedInfo'>
-                            <div className='personalInfoBlock'>
+                        <div key={'info_' + index} className='residentMedInfo'>
+                            <div key={'perInfo_' + index} className='personalInfoBlock'>
                                 <span id='name'> Name: {resident.FirstName} {resident.MiddleNameInitial} {resident.LastName} </span>
                                 <span id='dob'> DOB: {resident.DateOfBirth} </span>
                                 <span id='gender'> Gender: {resident.Gender} </span>
@@ -54,7 +54,7 @@ const Medication = () => {
                                     </Link>
                                 </span>
                             </div>
-                            <div>
+                            <div key={'medInfo_' + index}>
                                 {medications && medications
                                     .filter(x => x.ResidentId === resident.PublicId)
                                     .map(y => y.Medications)

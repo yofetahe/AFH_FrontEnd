@@ -2,12 +2,10 @@ import React from 'react';
 import { Button, Form, Radio } from 'semantic-ui-react';
 
 import './resident_info_form.css';
+import * as data from '../source/mockData';
 
-const options = [
-    { key: 'm', text: 'Male', value: 'male' },
-    { key: 'f', text: 'Female', value: 'female' },
-    { key: 'o', text: 'Other', value: 'other' },
-]
+const gender = data.gender;
+const branches = data.branches.map(br => ({key: br.PublicId, value: br.BranchName, text: br.BranchName}));
 
 const ResidentRegistration = () => {
     
@@ -19,6 +17,9 @@ const ResidentRegistration = () => {
         <div className='main-content'>
             <div className="formTitle">Resident Profile Information</div>
             <Form className='residentForm'>
+                <div>
+                    <Form.Select label='Branch' options={branches} placeholder='branch' width={8} />
+                </div>
                 <div className="formColumn wideColumn">
                     <div className="formCatagory">Resident Information</div>
                     <Form.Group>
@@ -28,7 +29,7 @@ const ResidentRegistration = () => {
                     </Form.Group>
                     <Form.Group>
                         <Form.Input label='Date of Birth' placeholder='Date of Birth' width={8} />
-                        <Form.Select label='Gender' options={options} placeholder='Gender' width={8} />
+                        <Form.Select label='Gender' options={gender} placeholder='Gender' width={8} />
                     </Form.Group>
                     <Form.Group>
                         <Form.Input label='SSN Documented' placeholder='SSN' width={6} />
