@@ -58,10 +58,10 @@ const MedicineDistribution = (props: any) => {
                 <div>Medicine Distribution</div>
                 <Divider />
                 {medicines.filter(med => {
-                    return med.Type === 'Needed' || (med.Time?.some(t => hourDistribution(t)) && isInValidDateInterval(med.StartDate, med.EndDate));
+                    return med.Category === 'Needed' || (med.Time?.some(t => hourDistribution(t)) && isInValidDateInterval(med.StartDate, med.EndDate));
                 }).sort((a, b) => {
-                    if (a.Type > b.Type) { return 1 }
-                    if (a.Type < b.Type) { return -1 }
+                    if (a.Category > b.Category) { return 1 }
+                    if (a.Category < b.Category) { return -1 }
                     return 0;
                 }).map(med => {
                     return (

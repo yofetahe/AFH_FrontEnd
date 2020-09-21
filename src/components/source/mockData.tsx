@@ -11,6 +11,8 @@ export const residents = [
         PlaceOfBirth: "Alaska",
         Gender: "Male",
         PhotoPath: "",
+        BranchId: '971985619847',
+        BranchName: 'Shalom',
         EmergencyContacts: [
             {
                 FirstName: "EC First Name",
@@ -31,6 +33,8 @@ export const residents = [
         PlaceOfBirth: "Washington",
         Gender: "Male",
         PhotoPath: "",
+        BranchId: '971985619847',
+        BranchName: 'Shalom',
         EmergencyContacts: [
             {
                 FirstName: "EC First Name",
@@ -51,6 +55,8 @@ export const residents = [
         PlaceOfBirth: "Alaska",
         Gender: "Male",
         PhotoPath: "",
+        BranchId: '971985619847',
+        BranchName: 'Shalom',
         EmergencyContacts: [
             {
                 FirstName: "EC First Name",
@@ -71,6 +77,8 @@ export const residents = [
         PlaceOfBirth: "Alaska",
         Gender: "Male",
         PhotoPath: "",
+        BranchId: '971985619847',
+        BranchName: 'Shalom',
         EmergencyContacts: [
             {
                 FirstName: "EC First Name",
@@ -91,6 +99,8 @@ export const residents = [
         PlaceOfBirth: "Alaska",
         Gender: "Male",
         PhotoPath: "",
+        BranchId: '971985619847',
+        BranchName: 'Shalom',
         EmergencyContacts: [
             {
                 FirstName: "EC First Name",
@@ -114,6 +124,8 @@ export const resident = {
     PrimaryLanguage: "English",
     DateEntered: "01/10/2018",
     PhotoPath: "",
+    BranchId: '971985619847',
+    BranchName: 'Shalom',
     EmergencyContacts: [
         {
             FirstName: "EC First Name",
@@ -404,7 +416,8 @@ export const residentMedications = [
         Id: '1',
         Name: 'Medication Name',
         Dose: '100ml',
-        Type: '3X/day',
+        Category: 'Scheduled',
+        PerDay: '3X/day',
         Time: ['8:00AM', '2:00PM', '10:00PM'],
         StartDate: '9/1/2020',
         NoOfDays: '30',
@@ -415,20 +428,25 @@ export const residentMedications = [
         Id: '2',
         Name: 'Medication Name',
         Dose: '250ml',
-        Type: 'Needed',
+        Category: 'PRN',
         Status: 'Active'
     },
     {
         Id: '1',
         Name: 'Medication Name',
         Dose: '150ml',
-        Type: '3X/day',
+        Category: 'Scheduled',
+        PerDay: '3X/day',
         Time: ['8:00AM', '2:00PM', '8:00PM'],
         StartDate: '9/1/2020',
         NoOfDays: '30',
         EndDate: '9/30/2020',
         Status: 'Active'
     }
+]
+export const medCategoryList = [
+    {key: 2, text: 'Scheduled', value: 'Scheduled'},
+    {key: 1, text: 'PRN(As Needed)', value: 'PRN'}
 ]
 
 export const purchase = [
@@ -772,4 +790,33 @@ export const appointmentList = [
         ContactPerson: 'Dr. Alen Henery',
         Phone: '(206) 000 0000'
     }
+]
+
+export const branches = [
+    {
+        id: '1',
+        PublicId: '971985619847',
+        BranchName: 'Shalom',
+        BranchCapacity: 5,
+        AvailableSpace: 0,
+        Location: '14522 52nd PL W',
+        InternetData: '',
+        Status: 'Active'
+    },
+    {
+        id: '2',
+        PublicId: '971985619842',
+        BranchName: 'Perfect Peace',
+        BranchCapacity: 5,
+        AvailableSpace: 0,
+        Location: 'Popular way',
+        InternetData: '',
+        Status: 'Active'
+    }
+]
+
+export const gender = [
+    { key: 'm', text: 'Male', value: 'male' },
+    { key: 'f', text: 'Female', value: 'female' },
+    { key: 'o', text: 'Other', value: 'other' },
 ]

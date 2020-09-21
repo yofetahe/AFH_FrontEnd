@@ -6,9 +6,13 @@ import Header from './components/common/header';
 import Footer from './components/common/footer';
 import Menu from './components/common/menu';
 
-import Residents from './components/residents_profile/index';
+import Login from './components/common/login';
+
+import Residents from './components/residents_profile';
 import ResidentInfo from './components/residents_profile/resident_info';
 import ResidentInfoForm from './components/residents_profile/resident_info_form';
+
+import CarePlan from './components/carePlan';
 
 import Staff from './components/stuff_profile';
 import StaffForm from './components/stuff_profile/staff_info_form';
@@ -33,6 +37,7 @@ import Documents from './components/admin/requiredDocument';
 import PurchaseItems from './components/admin/purchaseItems';
 import MedicationItems from './components/admin/medications';
 import Report from './components/report';
+import Branches from './components/admin/branches';
 import PageNotFound from './components/PageNotFound/pageNotFound';
 
 function App() {
@@ -42,32 +47,34 @@ function App() {
       <Menu />
       <div className='application-body'>
         <Switch>
-          <Route exact path="/" component={Residents} />
-          <Route exact path="/residents" component={Residents} />
-          <Route exact path="/resident/:id" component={ResidentInfo} />
-          <Route exact path="/addResident" component={ResidentInfoForm} />
-          <Route exact path="/updateResident/:id" component={ResidentInfoForm} />
-          <Route exact path="/staff" component={Staff} />
-          <Route exact path="/staff/:id" component={StaffInfo} />
-          <Route exact path="/staffForm" component={StaffForm} />
-          <Route exact path="/staffForm/:id" component={StaffForm} />
-          <Route exact path="/staff/document/:id" component={StaffDocument} />
-          <Route exact path="/medication" component={Medication} />
+          <Route exact path="/" component={Login} />
+          <Route strict exact path="/residents" component={Residents} />
+          <Route strict exact path="/resident/:id" component={ResidentInfo} />
+          <Route strict exact path="/addResident" component={ResidentInfoForm} />
+          <Route strict exact path="/updateResident/:id" component={ResidentInfoForm} />
+          <Route strict exact path="/carePlan" component={CarePlan} />
+          <Route strict exact path="/staff" component={Staff} />
+          <Route strict exact path="/staff/:id" component={StaffInfo} />
+          <Route strict exact path="/staffForm" component={StaffForm} />
+          <Route strict exact path="/staffForm/:id" component={StaffForm} />
+          <Route strict exact path="/staff/document/:id" component={StaffDocument} />
+          <Route strict exact path="/medication" component={Medication} />
           <Route strict exact path="/medication/:residentId" component={MedicationAddForm} />
           <Route strict exact path="/medication/distribution/:residentId" component={MedicationDistribution} />
           <Route strict exact path="/medication/:residentId/:medId" component={MedicationAddForm} />
           <Route strict exact path="/appointment" component={Appointment} />
           <Route strict exact path="/appointmentForm" component={AppointmentForm} />
           <Route strict exact path="/appointment/:appId" component={AppointmentForm} />
-          <Route exact path="/incidence" component={Incidence} />
-          <Route exact path="/purchase" component={Purchase} />
+          <Route strict exact path="/incidence" component={Incidence} />
+          <Route strict exact path="/purchase" component={Purchase} />
           <Route strict exact path="/schedule" component={Schedule} />
           <Route strict exact path="/scheduleForm" component={ScheduleForm} />          
           <Route strict exact path="/admin" component={Documents} />
           <Route strict exact path="/admin/documents" component={Documents} />
           <Route strict exact path="/admin/purchaseItems" component={PurchaseItems} />
           <Route strict exact path="/admin/medications" component={MedicationItems} />
-          <Route exact path="/report" component={Report} />
+          <Route strict exact path="/admin/branches" component={Branches} />
+          <Route strict exact path="/report" component={Report} />
           <Route component={PageNotFound} />
         </Switch>
       </div>

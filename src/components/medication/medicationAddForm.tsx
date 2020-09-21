@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Segment } from 'semantic-ui-react';
 
 import './medicationAddForm.css';
 import DefaultPhoto from '../../images/defaultPhoto.png';
@@ -8,7 +8,9 @@ import * as data from '../source/mockData';
 const AddForm = (props: any) => {
 
     const { resData } = props.location.state;
+    const medicationId = props.match.params.medId;
     const [timeInput, setTimeInput] = useState([1]);
+    const [isScheduled, setIsScheduled] = useState(false);
 
     const handleTimeInput = (event: any) => {
         event.preventDefault();
@@ -20,8 +22,19 @@ const AddForm = (props: any) => {
         setTimeInput(inputs);
     }
 
-    const options = data.medications.map(m => ({key: m.PublicId, text: m.ItemName, value: m.PublicId}));
-   
+    const handleMedicationByCategory = (event: any, data: any) => {
+        event.preventDefault();
+        const val = data.value;
+        if (val.toLowerCase() === 'scheduled') {
+            setIsScheduled(true);
+        } else {
+            setIsScheduled(false);
+        }
+    }
+
+    const medList = data.medications.map(m => ({ key: m.PublicId, text: m.ItemName, value: m.PublicId }));
+    const medCategoryList = data.medCategoryList;
+
     return (
         <div className='main-content'>
             <div className='residentInfoBlock'>
@@ -36,24 +49,28 @@ const AddForm = (props: any) => {
                 <div className="formCatagory">Medicine Information</div>
                 <Form>
                     <div>
-                        <Form.Select label='Medicine Name' options={options} placeholder='Medications' />
+                        <Form.Select label='Medicine Category' options={medCategoryList} placeholder='Medications category' onChange={handleMedicationByCategory} />
+                        <Form.Select label='Medicine Name' options={medList} placeholder='Medications' />
                         <Form.Input label='Dose' placeholder='Dose' />
-                        <Form.Input label='How many times per day' placeholder='how many times per day' onChange={(event) => { handleTimeInput(event) }} />
-                        <div className='timeSlot'>
-                            {timeInput.map(val => {
-                                return (
-                                    <Form.Field>
-                                        <label>Time slot {val}</label>
-                                        <input id={'timeInput_' + val} placeholder='time' />
-                                    </Form.Field>
-                                );
-                            })}
-                        </div>
-                        <Form.Input label='Start Date' placeholder='Start Date' />
-                        <Form.Input label='End date' placeholder='End date' />
+                        {isScheduled &&
+                            <Segment>
+                                <Form.Input label='How many times per day' placeholder='how many times per day' onChange={handleTimeInput} />
+                                <div className='timeSlot'>
+                                    {timeInput.map(val => {
+                                        return (
+                                            <Form.Input id={'timeInput_' + val} label={'Time slot ' + val} icon='time' placeholder='hh:mm PM/AM' />
+                                        );
+                                    })}
+                                </div>
+                                <Form.Input label='Start Date' placeholder='Start Date' />
+                                <Form.Input label='End date' placeholder='End date' />
+                            </Segment>
+                        }
                     </div>
                     <div className="formBottom">
-                        <Button type='submit'>Submit</Button>
+                        {medicationId && <Button type='submit'>update</Button>}
+                        {medicationId && <Button type='submit'>Refill</Button>}
+                        {!medicationId && <Button type='submit'>Add</Button>}
                     </div>
                 </Form>
             </div>

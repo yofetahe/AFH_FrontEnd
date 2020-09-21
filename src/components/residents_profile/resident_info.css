@@ -12,12 +12,19 @@
 .residentData {
     float: left;
     margin-left: 50px;
-    width: 20%;
+    width: 70%;
 }
 span {
     font-weight: bold;
 }
-
+.branchName {
+    border-bottom: 1px solid #fff;
+}
+.personalInfo, .pharmacyInfo, .medicalInfo {
+    float: left;
+    margin-right: 20px;
+    width: 30%;
+}
 .catagoryTitle {
     border-bottom: 1px solid #fff;
     font-weight: bold;
