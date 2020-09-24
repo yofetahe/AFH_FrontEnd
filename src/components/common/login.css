@@ -1,0 +1,12 @@
+#template {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#template Form {
+    background-color:rgba(168, 167, 167, 0.2);
+    padding: 20px;
+    margin-top: 40px;
+    border: 1px solid rgb(163, 162, 162);
+    border-radius: 5px;
+}

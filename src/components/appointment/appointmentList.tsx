@@ -95,7 +95,7 @@ const AppointmentList = () => {
                     </Button>
                 </div>
                 <div id='addBtn'>
-                    <Link to={'/appointmentForm'}>
+                    <Link to={'/appointment/add'}>
                         <Button icon labelPosition='left'>
                             <Icon name='add' />
                             Add Appointment

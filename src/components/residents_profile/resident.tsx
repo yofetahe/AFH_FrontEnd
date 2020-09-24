@@ -18,7 +18,7 @@ const resident = (props: any) => {
                 <div> {props.residentInfo.FirstName} {props.residentInfo.LastName} </div>
                 <div className="residentLinks">
                     <Link id={props.residentInfo.id}
-                        to={`/resident/${props.residentInfo.PublicId}`}
+                        to={`/residentsUpdate/${props.residentInfo.PublicId}`}
                         className='link-general'> VIEW </Link>
                     |
                     <span onClick={() => handleResidentLeave(props.residentInfo.ID)} className="textLink"> LEAVE </span>
