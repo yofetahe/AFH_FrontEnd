@@ -12,7 +12,7 @@ const Staff = () => {
     return (
         <div className='main-content'>
             <div className="residentHeader">
-                <Link to={'/staffForm'}>
+                <Link to={'/staffAdd'}>
                     <Button icon labelPosition='left'>
                         <Icon name='add' />
                         Staff
@@ -43,7 +43,7 @@ const Staff = () => {
                                 <Table.Cell>{staff.Phone}</Table.Cell>
                                 <Table.Cell>{staff.DateStarted}</Table.Cell>
                                 <Table.Cell>
-                                    <Link to={`/staff/document/${staff.PublicId}`}>
+                                    <Link to={`/staffDocument/${staff.PublicId}`}>
                                         <Icon color='blue' name='book' />
                                     </Link>
                                 </Table.Cell>

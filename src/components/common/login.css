@@ -1,19 +1,12 @@
-/* #template {
-    width: 100%;
-    background-color: rgba(241, 223, 223, 0.5);
-    padding: 40px 0px;
-    align-self: center;
-}
-#loginForm {
-    width: 30%;
-} */
 #template {
     display: flex;
     width: 100%;
     justify-content: center;
-    background-color: #0666a3;
-  }
-  #template Form {
-    background-color:silver;
-    padding: 10px;
-  }
+}
+#template Form {
+    background-color:rgba(168, 167, 167, 0.2);
+    padding: 20px;
+    margin-top: 40px;
+    border: 1px solid rgb(163, 162, 162);
+    border-radius: 5px;
+}

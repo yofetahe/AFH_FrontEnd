@@ -1,12 +1,10 @@
 import React from 'react';
-import { Form, Input, Button } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 import * as data from '../source/mockData';
 
 const staffsList = data.staffsData.map(staff => ({ key: staff.Id, text: staff.FirstName + ' ' + staff.LastName, value: staff.PublicId }));
-const appointmentType = [
-    { key: '1', value: 'Medical', text: 'Doctor Appointment' },
-    { key: '2', value: 'Religion', text: 'Church' }
-]
+const appointmentType = data.appointmentType;
+
 const AppointmentForm = () => {
     return (
         <div className='main-content'>

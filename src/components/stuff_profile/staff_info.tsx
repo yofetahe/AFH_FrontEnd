@@ -16,7 +16,7 @@ const StaffInfo = () => {
     return (
         <div className='main-content'>
             <div className="commonButtonDiv">
-                <Link to={`/staffForm/${staffProfile.PublicId}`} className="commonButton"> Update </Link>
+                <Link to={`/staffUpdate/${staffProfile.PublicId}`} className="commonButton"> Update </Link>
             </div>
             <div className='residentData'>
                 <div className="catagoryTitle"> Personal Info </div>

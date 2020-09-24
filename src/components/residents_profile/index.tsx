@@ -18,7 +18,7 @@ class ResidentProfile extends Component {
         return (
             <div className='main-content'>
                 <div className="residentHeader">
-                    <Link to={'/addResident'}>
+                    <Link to={'/residentsAdd'}>
                         <Button icon labelPosition='left'>
                             <Icon name='add' />
                             Resident

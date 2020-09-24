@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 
+import SecuredRoute from './securedRoute';
+
 import Header from './components/common/header';
 import Footer from './components/common/footer';
-import Menu from './components/common/menu';
 
 import Login from './components/common/login';
 
@@ -40,47 +41,47 @@ import Report from './components/report';
 import Branches from './components/admin/branches';
 import PageNotFound from './components/PageNotFound/pageNotFound';
 
-function App() {
+const App = () => {  
   return (
     <BrowserRouter>
       <Header />
-      <Menu />
       <div className='application-body'>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route strict exact path="/residents" component={Residents} />
-          <Route strict exact path="/resident/:id" component={ResidentInfo} />
-          <Route strict exact path="/addResident" component={ResidentInfoForm} />
-          <Route strict exact path="/updateResident/:id" component={ResidentInfoForm} />
-          <Route strict exact path="/carePlan" component={CarePlan} />
-          <Route strict exact path="/staff" component={Staff} />
-          <Route strict exact path="/staff/:id" component={StaffInfo} />
-          <Route strict exact path="/staffForm" component={StaffForm} />
-          <Route strict exact path="/staffForm/:id" component={StaffForm} />
-          <Route strict exact path="/staff/document/:id" component={StaffDocument} />
-          <Route strict exact path="/medication" component={Medication} />
-          <Route strict exact path="/medication/:residentId" component={MedicationAddForm} />
-          <Route strict exact path="/medication/distribution/:residentId" component={MedicationDistribution} />
-          <Route strict exact path="/medication/:residentId/:medId" component={MedicationAddForm} />
-          <Route strict exact path="/appointment" component={Appointment} />
-          <Route strict exact path="/appointmentForm" component={AppointmentForm} />
-          <Route strict exact path="/appointment/:appId" component={AppointmentForm} />
-          <Route strict exact path="/incidence" component={Incidence} />
-          <Route strict exact path="/purchase" component={Purchase} />
-          <Route strict exact path="/schedule" component={Schedule} />
-          <Route strict exact path="/scheduleForm" component={ScheduleForm} />          
-          <Route strict exact path="/admin" component={Documents} />
-          <Route strict exact path="/admin/documents" component={Documents} />
-          <Route strict exact path="/admin/purchaseItems" component={PurchaseItems} />
-          <Route strict exact path="/admin/medications" component={MedicationItems} />
-          <Route strict exact path="/admin/branches" component={Branches} />
-          <Route strict exact path="/report" component={Report} />
-          <Route component={PageNotFound} />
+          <SecuredRoute strict exact path="/residents" component={Residents} />
+          <SecuredRoute strict exact path="/residents/:id" component={ResidentInfo} />
+          <SecuredRoute strict exact path="/residentsAdd" component={ResidentInfoForm} />
+          <SecuredRoute strict exact path="/residentsUpdate/:id" component={ResidentInfoForm} />
+          <SecuredRoute strict exact path="/carePlan" component={CarePlan} />
+          <SecuredRoute strict exact path="/staff" component={Staff} />
+          <SecuredRoute strict exact path="/staff/:id" component={StaffInfo} />
+          <SecuredRoute strict exact path="/staffAdd" component={StaffForm} />
+          <SecuredRoute strict exact path="/staffUpdate/:id" component={StaffForm} />
+          <SecuredRoute strict exact path="/staffDocument/:id" component={StaffDocument} />
+          <SecuredRoute strict exact path="/medication" component={Medication} />
+          <SecuredRoute strict exact path="/medication/:residentId" component={MedicationAddForm} />
+          <SecuredRoute strict exact path="/medication/distribution/:residentId" component={MedicationDistribution} />
+          <SecuredRoute strict exact path="/medication/:residentId/:medId" component={MedicationAddForm} />
+          <SecuredRoute strict exact path="/appointment" component={Appointment} />
+          <SecuredRoute strict exact path="/appointment/add" component={AppointmentForm} />
+          <SecuredRoute strict exact path="/appointment/:appId" component={AppointmentForm} />
+          <SecuredRoute strict exact path="/incidence" component={Incidence} />
+          <SecuredRoute strict exact path="/purchase" component={Purchase} />
+          <SecuredRoute strict exact path="/schedule" component={Schedule} />
+          <SecuredRoute strict exact path="/scheduleForm" component={ScheduleForm} />
+          <SecuredRoute strict exact path="/admin" component={Documents} />
+          <SecuredRoute strict exact path="/admin/documents" component={Documents} />
+          <SecuredRoute strict exact path="/admin/purchaseItems" component={PurchaseItems} />
+          <SecuredRoute strict exact path="/admin/medications" component={MedicationItems} />
+          <SecuredRoute strict exact path="/admin/branches" component={Branches} />
+          <SecuredRoute strict exact path="/report" component={Report} />
+          <Route strict component={PageNotFound} />
         </Switch>
       </div>
       <Footer />
     </BrowserRouter>
   );
+
 }
 
 export default App;

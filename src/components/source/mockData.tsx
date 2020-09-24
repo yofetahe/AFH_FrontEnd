@@ -791,6 +791,10 @@ export const appointmentList = [
         Phone: '(206) 000 0000'
     }
 ]
+export const appointmentType = [
+    { key: '1', value: 'Medical', text: 'Doctor Appointment' },
+    { key: '2', value: 'Religion', text: 'Church' }
+]
 
 export const branches = [
     {

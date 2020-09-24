@@ -22,3 +22,7 @@
 .header-title>span {
     font-size: 10px;
 }
+.logoutBtn {
+    cursor: pointer;
+    font-size: 12px;
+}

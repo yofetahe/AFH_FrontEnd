@@ -1,28 +1,34 @@
 import React, {useState} from 'react';
-
 import { Button, Form } from 'semantic-ui-react';
 
 import './login.css';
 
-const Login = () => {
+const Login = (props: any) => {
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleUsername = (e: any, d: any) => {
+        e.preventDefault();
         setUsername(d.value);
     }
     const handlePassword = (e: any, d: any) => {
+        e.preventDefault();
         setPassword(d.value);
+        console.log(password);
     }
 
     const handleLoginCredential = (event: any, data: any) => {
         event.preventDefault();
-        console.log(username, password);
+        if (username !== undefined && username === 'testUser') {
+            localStorage.setItem('session', 'ACTIVE');
+            localStorage.setItem('loggedInUser', username);
+            props.history.push('/residents');            
+        }
     }
 
     return (
-        <div id='template'>
+        <div id='template'>            
             <Form onSubmit={handleLoginCredential}>
                 <Form.Input label='Username' placeholder='username' onChange={handleUsername} />
                 <Form.Input label='Enter Password' type='password' onChange={handlePassword} />
