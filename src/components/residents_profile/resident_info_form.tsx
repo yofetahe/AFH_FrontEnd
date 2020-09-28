@@ -127,7 +127,7 @@ const ResidentRegistration = () => {
                         </Form.Field>
                     </div>
                 </div>
-                <div>
+                <div id='formBtn'>
                     <Button type='submit'>Submit</Button>
                 </div>
             </Form>

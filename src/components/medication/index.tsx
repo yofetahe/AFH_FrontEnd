@@ -39,16 +39,18 @@ const Medication = () => {
                                     <Link to={{
                                         pathname: `/medication/distribution/${resident.PublicId}`,
                                         state: { resData: resident }
-                                    }}>                                        
-                                        <Button icon>
+                                    }}>
+                                        <Button icon labelPosition='left'>
+                                            Distribution
                                             <Icon color='teal' name='sync alternate' />
-                                        </Button>
+                                        </Button>                                        
                                     </Link>
                                     <Link to={{
                                         pathname: `/medication/${resident.PublicId}`,
                                         state: { resData: resident }
                                     }}>
-                                        <Button icon>
+                                        <Button icon labelPosition='left'>
+                                            Add Medicine
                                             <Icon color='teal' name='add' />
                                         </Button>
                                     </Link>
@@ -63,16 +65,18 @@ const Medication = () => {
                                             .map(med => {
                                                 return (
                                                     <div key={med.Id} className='medicationList'>
-                                                        <Icon color='teal' name='pills' />
-                                                        {med.Name} ({med.Dose}) - {med.Type} {med.Time && ('(' + med.Time.map(t => (t)) + ')')}
-                                                        {med.StartDate && med.EndDate && (' - from ' + med.StartDate + ' to ' + med.EndDate)} &nbsp;
-                                                        <Link to={{
-                                                            pathname: `/medication/${resident.PublicId}/${med.PublicId}`,
-                                                            state: { resData: resident }
-                                                        }}>
-                                                            <Icon color='blue' name='edit' />                                                            
-                                                        </Link>
-                                                        <span className='terminateMedication'><Icon color='red' name='times rectangle' /></span>
+                                                        <span><Icon color='teal' name='pills' /> {med.Name} ({med.Dose})</span>
+                                                        <span>- {med.Type} {med.Time && ('(' + med.Time.map(t => (t)) + ')')}</span>
+                                                        <span>{med.StartDate && med.EndDate && (' - from ' + med.StartDate + ' to ' + med.EndDate)} &nbsp;</span>
+                                                        <span>
+                                                            <Link to={{
+                                                                pathname: `/medication/${resident.PublicId}/${med.PublicId}`,
+                                                                state: { resData: resident }
+                                                            }}>
+                                                                <Icon color='blue' name='edit' />
+                                                            </Link>
+                                                            <span className='terminateMedication'><Icon color='red' name='times rectangle' /></span>
+                                                        </span>
                                                     </div>
                                                 );
                                             })

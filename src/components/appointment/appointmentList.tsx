@@ -104,44 +104,62 @@ const AppointmentList = () => {
                 </div>
             </Form>
             <Divider />
-            <Table striped>
-                <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderCell>Name</Table.HeaderCell>
-                        <Table.HeaderCell>Appointment Date</Table.HeaderCell>
-                        <Table.HeaderCell>Time</Table.HeaderCell>
-                        <Table.HeaderCell>Type</Table.HeaderCell>
-                        <Table.HeaderCell>Reason</Table.HeaderCell>
-                        <Table.HeaderCell>Address</Table.HeaderCell>
-                        <Table.HeaderCell>Contact Person</Table.HeaderCell>
-                        <Table.HeaderCell>Phone</Table.HeaderCell>
-                        <Table.HeaderCell>&nbsp;</Table.HeaderCell>
-                        <Table.HeaderCell>&nbsp;</Table.HeaderCell>
-                    </Table.Row>
-                </Table.Header>
-                <Table.Body>
-                    {appointments && appointments.map(app => {
-                        return (
-                            <Table.Row>
-                                <Table.Cell>{app.ResidentName}</Table.Cell>
-                                <Table.Cell>{app.AppointmentDate}</Table.Cell>
-                                <Table.Cell>{app.TimeFrom} - {app.TimeTo}</Table.Cell>
-                                <Table.Cell>{app.Type}</Table.Cell>
-                                <Table.Cell>{app.Reason}</Table.Cell>
-                                <Table.Cell>{app.Address}</Table.Cell>
-                                <Table.Cell>{app.ContactPerson}</Table.Cell>
-                                <Table.Cell>{app.Phone}</Table.Cell>
-                                <Table.Cell>
-                                    <Link to={`/appointment/${app.PublicId}`}>
-                                        <Icon color='blue' name='external square alternate' />
-                                    </Link>
-                                </Table.Cell>
-                                <Table.Cell> <Icon color='red' name='delete calendar' onClick={() => handleDeleteAppointment(app.PublicId)} /> </Table.Cell>
-                            </Table.Row>
-                        );
-                    })}
-                </Table.Body>
-            </Table>
+            <div className='appointmentListTable'>
+                <Table striped>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Name</Table.HeaderCell>
+                            <Table.HeaderCell>Appointment Date</Table.HeaderCell>
+                            <Table.HeaderCell>Time</Table.HeaderCell>
+                            <Table.HeaderCell>Type</Table.HeaderCell>
+                            <Table.HeaderCell>Reason</Table.HeaderCell>
+                            <Table.HeaderCell>Address</Table.HeaderCell>
+                            <Table.HeaderCell>Contact Person</Table.HeaderCell>
+                            <Table.HeaderCell>Phone</Table.HeaderCell>
+                            <Table.HeaderCell>&nbsp;</Table.HeaderCell>
+                            <Table.HeaderCell>&nbsp;</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                        {appointments && appointments.map(app => {
+                            return (
+                                <Table.Row>
+                                    <Table.Cell>{app.ResidentName}</Table.Cell>
+                                    <Table.Cell>{app.AppointmentDate}</Table.Cell>
+                                    <Table.Cell>{app.TimeFrom} - {app.TimeTo}</Table.Cell>
+                                    <Table.Cell>{app.Type}</Table.Cell>
+                                    <Table.Cell>{app.Reason}</Table.Cell>
+                                    <Table.Cell>{app.Address}</Table.Cell>
+                                    <Table.Cell>{app.ContactPerson}</Table.Cell>
+                                    <Table.Cell>{app.Phone}</Table.Cell>
+                                    <Table.Cell>
+                                        <Link to={`/appointment/${app.PublicId}`}>
+                                            <Icon color='blue' name='external square alternate' />
+                                        </Link>
+                                    </Table.Cell>
+                                    <Table.Cell> <Icon color='red' name='delete calendar' onClick={() => handleDeleteAppointment(app.PublicId)} /> </Table.Cell>
+                                </Table.Row>
+                            );
+                        })}
+                    </Table.Body>
+                </Table>
+            </div>
+            <div className='appointmentListFormat'>
+            {appointments && appointments.map(app => {
+                return (
+                    <div className='appointmentList'>
+                        <span> {app.ResidentName} </span>
+                        <span> <b>Date</b>: {app.AppointmentDate} </span>
+                        <span> <b>Time</b>: {app.TimeFrom} - {app.TimeTo} </span>
+                        <span> <b>Appointment Type</b>: {app.Type} </span>
+                        <span> <b>Reason</b>: {app.Reason} </span>
+                        <span> <b>Address</b>: {app.Address} </span>
+                        <span> <b>Contact Person</b>: {app.ContactPerson} </span>
+                        <span> <b>Phone</b>: {app.Phone} </span>
+                    </div>
+                );
+            })}
+            </div>
         </div>
     );
 }

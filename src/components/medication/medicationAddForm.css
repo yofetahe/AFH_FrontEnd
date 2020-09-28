@@ -21,3 +21,16 @@
 .formBottom {
     margin-top: 20px;
 }
+
+@media all and (max-device-width: 480px) {
+
+    .residentInfoBlock {
+        text-align: center;
+        width: 100%;
+        border-bottom: solid 1px rgba(196, 196, 196, 0.5);
+    }
+    .medicineAddForm {
+        display: block;
+        padding: 0px 10px;
+    }
+}

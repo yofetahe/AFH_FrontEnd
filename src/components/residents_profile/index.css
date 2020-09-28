@@ -1,3 +1,9 @@
 .residentHeader {
     margin-bottom: 20px;
 }
+
+@media all and (max-device-width: 480px) {
+    .residentHeader {
+        padding-left: 5px;
+    }
+}

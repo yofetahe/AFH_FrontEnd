@@ -11,7 +11,7 @@ const handleResidentLeave = (ID: string) => {
 const resident = (props: any) => {
     return (
         <div className='residentProfile'>
-            <div>
+            <div id='residentPicture'>
                 <img src={DefaultPhoto} alt='pic' />
             </div>
             <div className='residentName'>

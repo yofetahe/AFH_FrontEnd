@@ -1,7 +1,13 @@
+.menu-bar {
+    display: none;
+}
 .menu {
     padding: 20px 50px 8px 50px;
     border-bottom: solid 1px rgba(128, 128, 128, 0.5);
     color: #fff;   
+}
+.menu-list {
+    display: block;
 }
 
 .menu-tab {
@@ -27,4 +33,72 @@
 .logoutBtn {    
     float: right;
     color: rgb(65, 65, 65);
+}
+
+/* Your CSS rules for your mobile phones here */
+@media all and (max-device-width: 480px) {
+    .menu {
+        padding: 0px 0px 8px 0px;
+        border-bottom: 0px;          
+    }
+    .menu-bar {
+        display: block;
+        background-color: rgba(119, 118, 118, 0.4);
+        padding: 10px 0px 10px 0px;        
+    }
+    .menu-bar #app-title {
+        display: inline-block;
+        width: 49%;
+        padding: 10px 0px 0px 10px;
+        color: #000;
+        font-size: 49px;
+    }
+    .menu-bar #app-title > img {
+        display: inline-block;
+        width: 49%;
+        width: 50px;
+        margin-right: 10px;
+    }
+    .menu-bar #app-title > #title {
+        display: inline-block;
+        width: 49%;
+    }
+    .menu-bar #app-title > #title > span {        
+        font-size: 10px;
+    }
+    .menu-bar #menu-bar {
+        display: inline-block;
+        width: 49%;
+        text-align: right;
+        padding-right: 10px;
+    }
+    .menu-list {
+        display: none;
+    }
+    .visibile-menu-list {
+        display: block;
+    }
+    #menuList {
+        padding: 10px 0px;
+    }
+    #menuList > * {
+        border-bottom: 1px solid silver;
+    }
+    .menu-tab {
+        display: block;
+        line-height: 20px;
+    }
+    .active-menu-tab {
+        text-decoration-line: none;
+        color: rgb(91, 104, 204);
+        display: block;
+        padding: 0px 20px;
+        font-weight: normal; 
+        /* border-bottom: solid 3px rgb(91, 104, 204); */
+    }
+    .logoutBtn {    
+        float: right;
+        color: rgb(65, 65, 65);
+        padding-right: 20px;
+    }
 }

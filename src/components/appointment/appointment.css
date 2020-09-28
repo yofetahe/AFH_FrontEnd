@@ -29,3 +29,60 @@
 .appAddForm {
     width: 30%;
 }
+.appointmentListTable {
+    display: block;
+}
+.appointmentListFormat {
+    display: none;
+}
+
+@media all and (max-device-width: 480px) {
+
+    .appointmentForm {
+        display: block;
+        width: 100%;
+    }
+
+    #searchDateForm {
+        display: block;
+        width: 100%;
+        padding: 0px 5px;
+    }
+
+    #searchBtn, #addBtn {
+        display: block;
+        width: 100%;
+        padding: 0px 5px;
+        margin-bottom: 10px;
+    }
+
+    .appointmentListTable {
+        display: none;
+    }
+
+    .appointmentListFormat {
+        display: block;
+    }
+    .appointmentList {
+        padding: 5px;
+        background-color: rgba(192, 192, 192, 0.1);
+        margin-bottom: 5px;
+    }
+
+    .appointmentList > span:nth-child(1) {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        color: rgb(0, 81, 128);
+        border-bottom: 1px solid rgba(192, 192, 192, 0.3);
+        padding: 5px 0px;
+    }
+
+    .appointmentList > * {
+        margin: 0px 5px 5px 0px;
+        display: block;
+    }
+    .appointmentList > span > b {
+        color: teal;
+    }
+}

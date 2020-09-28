@@ -48,3 +48,31 @@ input[type=radio] {
     height: 30px;
     vertical-align: middle;
 }
+
+@media all and (max-device-width: 480px) {
+    .formTitle{
+        padding-left: 5px;
+    }
+    .residentForm {
+        padding: 0px 5px;
+    }
+    .formColumn {
+        display: block;
+        margin-right: 20px;
+    }
+    .wideColumn {
+        width: 100%;
+    }
+    .smallColumn {
+        width: 100%;
+    }
+    .formCatagory{
+        font-weight: bold;
+        line-height: 50px;
+        border-bottom: 0px;
+        color: blue;
+    }
+    #formBtn {
+        margin-top: 10px;
+    }
+}

@@ -38,6 +38,8 @@
 }
 
 
+/* ----------------------- */
+
 .application-body {
   margin-bottom: 40px;
 }
@@ -89,3 +91,9 @@
   width: 158px;
   height: 27px;
 } */
+
+@media all and (max-device-width: 480px) {
+  .main-content {
+    padding: 20px 0px;
+  }
+}
